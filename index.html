@@ -64,21 +64,21 @@ addEventListener("resize", resize);
 // =====================
 // FRAMES
 // =====================
-const frameCount = 50;
+// const frameCount = 50;
 
-const currentFrame = i =>
-  encodeURI(
-    `images/sequence/Beckn landing fold - png sequence${String(i).padStart(3,'0')}.png`
-  );
+// const currentFrame = i =>
+//   encodeURI(
+//     `images/sequence/Beckn landing fold - png sequence${String(i).padStart(3,'0')}.png`
+//   );
 
-const images = [];
-const seq = { frame: 0 };
+// const images = [];
+// const seq = { frame: 0 };
 
-for(let i=0;i<frameCount;i++){
-  const img = new Image();
-  img.src = currentFrame(i);
-  images.push(img);
-}
+// for(let i=0;i<frameCount;i++){
+//   const img = new Image();
+//   img.src = currentFrame(i);
+//   images.push(img);
+// }
 // const frameCount = 124;
 
 // const images = [];
@@ -88,7 +88,15 @@ for(let i=0;i<frameCount;i++){
 //   img.src = `images/sequences/Image_${String(i).padStart(3,'0')}.jpg`;
 //   images.push(img);
 // }
+const frameCount = 170;
 
+const images = [];
+
+for(let i=1;i<=frameCount;i++){
+  const img = new Image();
+  img.src = `images/sequencess/ezgif-frame-${String(i).padStart(3,'0')}.jpg`;
+  images.push(img);
+}
 // =====================
 // RENDER
 // =====================

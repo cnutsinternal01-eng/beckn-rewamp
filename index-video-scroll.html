@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style>
+body{
+  margin:0;
+  height:200vh; /* scroll space */
+  background:#000;
+  overflow-x:hidden;
+}
+
+video{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  opacity:0;
+  pointer-events:none;
+}
+</style>
+</head>
+
+<body>
+
+
+<video id="video" muted playsinline preload="auto">
+  <source src="Landing fold video.mp4" type="video/mp4">
+</video>
+
+<section class="hero" id="hero">
+  <h1>Beckn Protocol</h1>
+</section>
+
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+const video = document.getElementById("video");
+const hero  = document.getElementById("hero");
+
+////////////////////////////////////////////////////
+// WAIT UNTIL VIDEO READY
+////////////////////////////////////////////////////
+video.addEventListener("loadedmetadata", () => {
+
+  const duration = video.duration;
+
+  ////////////////////////////////////////////////////
+  // SCROLL CONTROL (Apple style)
+  ////////////////////////////////////////////////////
+  ScrollTrigger.create({
+    start:0,
+    end:"+=1500",
+    scrub:true,
+    onUpdate:self=>{
+      video.currentTime = self.progress * duration;
+    }
+  });
+
+});
+
+////////////////////////////////////////////////////
+// MOUSE CONTROL (left ↔ right scrub)
+////////////////////////////////////////////////////
+let targetTime = 0;
+
+window.addEventListener("mousemove",(e)=>{
+
+  const percent = e.clientX / window.innerWidth;
+
+  targetTime = percent * video.duration;
+
+});
+
+////////////////////////////////////////////////////
+// SMOOTH LERP FOR VIDEO TIME (buttery)
+////////////////////////////////////////////////////
+function smoothUpdate(){
+
+  video.currentTime += (targetTime - video.currentTime) * 0.1;
+
+  requestAnimationFrame(smoothUpdate);
+}
+
+smoothUpdate();
+
+////////////////////////////////////////////////////
+// HERO SHOW AT END
+////////////////////////////////////////////////////
+video.addEventListener("timeupdate",()=>{
+
+  if(video.currentTime > video.duration - 0.3){
+    gsap.to(hero,{opacity:1});
+  }else{
+    gsap.to(hero,{opacity:0});
+  }
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<style>
+body{
+  margin:0;
+  overflow:hidden;
+  background:url('./images/sequence/Beckn\ landing\ fold\ -\ png\ sequence049.png');
+  font-family:system-ui;
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
+}
+
+/* VIDEO FULLSCREEN */
+.intro-video{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:10;
+}
+
+/* HERO */
+.hero{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:url('./images/sequence/Beckn\ landing\ fold\ -\ png\ sequence049.png');
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
+  opacity:0;
+  z-index:5;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= VIDEO INTRO ================= -->
+<video
+  id="introVideo"
+  class="intro-video"
+  autoplay
+  muted
+  playsinline
+  preload="auto"
+>
+  <!-- your file -->
+  <source src="Landing fold video.mp4" type="video/mp4">
+</video>
+
+
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div style="text-align:center">
+    <h1 style="font-size:56px;margin:0">Beckn Protocol</h1>
+    <p style="color:#666;margin-top:16px">Hero content starts here</p>
+  </div>
+</section>
+
+
+
+<script>
+const video = document.getElementById("introVideo");
+const hero  = document.getElementById("hero");
+
+
+// =======================
+// WHEN VIDEO FINISHES
+// =======================
+video.addEventListener("ended", () => {
+
+  const tl = gsap.timeline();
+
+  tl.to(video,{
+    opacity:0,
+    duration:1,
+    ease:"power2.out"
+  })
+  .to(hero,{
+    opacity:1,
+    duration:1
+  }, "-=0.1");
+
+});
+
+
+// =======================
+// iOS autoplay fix
+// =======================
+video.play().catch(()=>{});
+</script>
+
+</body>
+</html>
