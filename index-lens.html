@@ -132,24 +132,70 @@ body{
 <script>
 const hero = document.querySelector(".hero");
 const overlay = document.querySelector(".overlay");
+const bubbles = document.querySelectorAll(".bubble");
 
-/* smooth lens follow */
 let mouseX = window.innerWidth/2;
 let mouseY = window.innerHeight/2;
 let currentX = mouseX;
 let currentY = mouseY;
 
-hero.addEventListener("mousemove",(e)=>{
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
+const isTouch = window.matchMedia("(pointer: coarse)").matches;
 
-/* smooth animation loop */
+
+////////////////////////////////////////////////////
+// DESKTOP → MOUSE FOLLOW
+////////////////////////////////////////////////////
+if(!isTouch){
+
+  hero.addEventListener("mousemove",(e)=>{
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+}
+
+
+////////////////////////////////////////////////////
+// MOBILE → AUTO TOUR MODE
+////////////////////////////////////////////////////
+else{
+
+  document.querySelector(".title").innerText = "Exploring for you ✨";
+
+  const positions = [];
+
+  // get center of each bubble
+  bubbles.forEach(b=>{
+    const rect = b.getBoundingClientRect();
+
+    positions.push({
+      x: rect.left + rect.width/2,
+      y: rect.top + rect.height/2
+    });
+  });
+
+  let index = 0;
+
+  function moveToNext(){
+
+    mouseX = positions[index].x;
+    mouseY = positions[index].y;
+
+    index = (index + 1) % positions.length;
+  }
+
+  moveToNext();
+  setInterval(moveToNext, 3000); // 3s per bubble
+}
+
+
+////////////////////////////////////////////////////
+// SMOOTH LENS ANIMATION LOOP
+////////////////////////////////////////////////////
 function animate(){
 
-  // easing follow
-  currentX += (mouseX - currentX) * 0.15;
-  currentY += (mouseY - currentY) * 0.15;
+  currentX += (mouseX - currentX) * 0.12;
+  currentY += (mouseY - currentY) * 0.12;
 
   overlay.style.webkitMaskImage =
     `radial-gradient(circle 180px at ${currentX}px ${currentY}px,
@@ -169,5 +215,8 @@ function animate(){
 animate();
 </script>
 
+
 </body>
-</html>
+</html> 
+
+

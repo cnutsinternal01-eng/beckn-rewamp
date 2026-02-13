@@ -8,13 +8,18 @@
 <style>
 body{
   margin:0;
-  overflow:hidden;
-  background:url('./images/sequence/Beckn\ landing\ fold\ -\ png\ sequence049.png');
+  overflow-x:hidden;
+  background:url('./images/sequence/BG.png');
   font-family:system-ui;
   /* background-repeat: no-repeat;
   background-size: cover;
   background-position: center; */
 }
+body.locked{
+  overflow:hidden;
+  height:100vh;
+}
+
 
 /* VIDEO FULLSCREEN */
 .intro-video{
@@ -28,17 +33,63 @@ body{
 
 /* HERO */
 .hero{
-  position:fixed;
-  inset:0;
+  /* position:fixed;
+  inset:0; */
+  position: relative;
+  height: 100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:url('./images/sequence/Beckn\ landing\ fold\ -\ png\ sequence049.png');
+  background:url('./images/sequence/BG.png');
   /* background-repeat: no-repeat;
   background-size: cover;
   background-position: center; */
   opacity:0;
   z-index:5;
+}
+.fold{
+  min-height:100vh;
+  display:flex;
+  padding:80px;
+  gap:80px;
+  background:#fff;
+}
+
+/* LEFT */
+.left{
+  width:40%;
+}
+
+.left h2{
+  font-size:48px;
+  line-height:1.2;
+}
+
+/* RIGHT */
+.right{
+  width:60%;
+  display:flex;
+  gap:24px;
+  overflow:hidden;
+}
+
+/* marquee columns */
+.marquee{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+/* cards */
+.card{
+  width:280px;
+  height:360px;
+  background:#eee;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
 }
 
 </style>
@@ -70,9 +121,40 @@ body{
   </div>
 </section>
 
+<!-- ================= NEXT FOLD ================= -->
+<section class="fold">
+
+  <div class="left">
+    <h2>Leap into the<br><i>networks of the future</i></h2>
+    <p>
+      Self-connected networks grow organically and sustain themselves.
+      Take a look at some open networks.
+    </p>
+  </div>
+
+  <div class="right">
+
+    <div class="marquee col1">
+      <div class="card">Project 1</div>
+      <div class="card">Project 2</div>
+      <div class="card">Project 3</div>
+      <div class="card">Project 4</div>
+    </div>
+
+    <div class="marquee col2">
+      <div class="card">Project 5</div>
+      <div class="card">Project 6</div>
+      <div class="card">Project 7</div>
+      <div class="card">Project 8</div>
+    </div>
+
+  </div>
+
+</section>
 
 
 <script>
+  document.body.classList.add("locked");
 const video = document.getElementById("introVideo");
 const hero  = document.getElementById("hero");
 
@@ -87,20 +169,48 @@ video.addEventListener("ended", () => {
   tl.to(video,{
     opacity:0,
     duration:1,
-    ease:"power2.out"
+    ease:"power2.out",
+    onComplete:()=>{
+      video.style.display="none";
+      document.body.classList.remove("locked"); // 🔥 unlock scroll
+    }
   })
   .to(hero,{
     opacity:1,
     duration:1
-  }, "-=0.1");
+  }, "-=0.3");
 
 });
+
 
 
 // =======================
 // iOS autoplay fix
 // =======================
 video.play().catch(()=>{});
+
+//////////////////////////////
+// VERTICAL MARQUEE LOOP
+//////////////////////////////
+
+function createMarquee(el, speed=40, reverse=false){
+
+  const height = el.offsetHeight;
+
+  // duplicate for seamless loop
+  el.innerHTML += el.innerHTML;
+
+  gsap.to(el,{
+    y: reverse ? height : -height,
+    duration: speed,
+    ease:"none",
+    repeat:-1
+  });
+}
+
+createMarquee(document.querySelector(".col1"), 20, false);
+createMarquee(document.querySelector(".col2"), 25, true);
+
 </script>
 
 </body>
