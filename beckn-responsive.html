@@ -296,6 +296,7 @@
         font-weight: var(--fw-medium);
         line-height: 1.5;
         margin-bottom: 7px;
+        font-family: var(--font-body)
       }
 
       .usecase-card img {
@@ -324,10 +325,10 @@
       }
 
       .usecase-card__category {
-        font-size: 10px;
+        font-size: 12px;
         letter-spacing: 2px;
         line-height: 18px;
-        font-weight: var(--fw-regular);
+        font-weight: 600;
         text-transform: uppercase;
       }
 
@@ -532,12 +533,20 @@
           margin: 0 auto;
         }
         nav ul {
-          gap: 20px;
-          padding: 15px 20px;
+                  gap: 15px;
+        padding: 15px 15px;
         }
+
+nav img {
+    height: 24px;
+    width: auto;
+}
+        nav li:first-child {
+    margin-right: 10px;
+}
         nav a {
           text-decoration: none;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: var(--fw-medium);
           color: #333;
           transition: all 0.3s ease;
