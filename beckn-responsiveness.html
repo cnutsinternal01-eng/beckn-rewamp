@@ -11,27 +11,6 @@
     <title>beckn</title>
 
     <style>
-      :root {
-        /* COLORS */
-        --color-bg-main: #f8f8f8;
-        --color-text-main: #212121;
-        --color-primary-blue: #0059c9;
-        --color-white: #ffffff;
-        --color-black: #000000;
-        --color-border-light: #ccc;
-
-        /* FONTS */
-        --font-heading: "Noto Serif", serif;
-        --font-body: "Poppins", sans-serif;
-
-        /* FONT WEIGHTS */
-        --fw-light: 200;
-        --fw-regular: 400;
-        --fw-medium: 500;
-      }
-
-      /* ================= RESET ================= */
-
       * {
         margin: 0;
         padding: 0;
@@ -40,30 +19,30 @@
 
       body {
         overflow-x: hidden;
-        background: var(--color-bg-main);
-        font-family: var(--font-body);
+        background: #f8f8f8;
+        font-family: "Poppins", sans-serif; /* Default = Paragraph font */
       }
 
-      /* All Headings */
+      /* All Headings → Noto Serif */
       h1,
       h2,
       h3,
       h4,
       h5,
       h6 {
-        font-family: var(--font-heading);
-        font-weight: var(--fw-regular);
+        font-family: "Noto Serif", serif;
+        font-weight: 400;
       }
 
-      /* Paragraphs */
+      /* All Paragraphs */
       p {
-        font-family: var(--font-body);
-        font-weight: var(--fw-regular);
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
       }
 
       /* Links */
       a {
-        font-family: var(--font-body);
+        font-family: "Poppins", sans-serif;
       }
 
       #smooth-content {
@@ -76,22 +55,10 @@
         position: relative;
         height: 100vh;
         width: 100%;
-        background: url("./images/assets/beckn-hero--bg.webp") center/cover
+        background: url("./images/Home\ -\ Option\ 2-\ V1.png") center/cover
           no-repeat;
         overflow: hidden;
         margin-bottom: -1px;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: url("./images/assets/beckn-hero.png");
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: center;
       }
 
       .hotspot {
@@ -103,10 +70,31 @@
         backdrop-filter: blur(2px);
       }
 
+      /* .h1 {
+        top: 15%;
+        left: 20%;
+      }
+      .h2 {
+        top: 35%;
+        right: 18%;
+      }
+      .h3 {
+        bottom: 18%;
+        left: 25%;
+      }
+      .h4 {
+        top: 60%;
+        left: 55%;
+      }
+      .h5 {
+        bottom: 30%;
+        right: 25%;
+      } */
+
       .overlay {
         position: absolute;
         inset: 0;
-        background: var(--color-bg-main);
+        background: #f8f8f8;
         pointer-events: none;
       }
 
@@ -122,17 +110,15 @@
 
       .hero--content h1 {
         font-size: 40px;
-        font-weight: var(--fw-regular);
-        line-height: 48px;
+        font-weight: 400;
       }
 
       .hero--content p {
         margin-top: 30px;
         font-size: 20px;
-        color: var(--color-primary-blue);
-        font-weight: var(--fw-regular);
+        color: #0059c9;
+        font-weight: 400;
       }
-
       .hero-content--links {
         display: flex;
         justify-content: center;
@@ -140,11 +126,10 @@
         align-items: flex-end;
         font-size: 16px !important;
       }
-
       .hero--content a {
         font-size: 16px;
-        color: var(--color-text-main);
-        font-weight: var(--fw-regular);
+        color: #212121;
+        font-weight: 400;
         text-decoration: none;
       }
 
@@ -170,32 +155,31 @@
 
       .possibilities__left h2 {
         font-size: 48px;
-        font-weight: var(--fw-regular);
-        line-height: 56px;
+        font-weight: 400;
       }
 
       .possibilities__left p {
         margin-top: 20px;
         font-size: 18px;
-        color: var(--color-text-main);
-        max-width: 395px;
-        font-weight: var(--fw-regular);
+        color: #212121;
+        max-width: 448px;
+        font-weight: 400;
       }
 
       .possibilities__btn {
         display: inline-block;
         margin-top: 30px;
         padding: 14px 28px;
-        border: 1px solid var(--color-border-light);
+        border: 1px solid #ccc;
         border-radius: 40px;
         text-decoration: none;
-        color: var(--color-text-main);
+        color: #222;
         transition: 0.3s;
       }
 
       .possibilities__btn:hover {
-        background: var(--color-black);
-        color: var(--color-white);
+        background: #222;
+        color: #fff;
       }
 
       .possibilities__right {
@@ -215,7 +199,6 @@
         flex-direction: column;
         gap: 30px;
       }
-
       .possibilities__right::before,
       .possibilities__right::after {
         content: "";
@@ -226,38 +209,21 @@
         z-index: 2;
         pointer-events: none;
       }
-
       .possibilities__right::before {
         top: -10px;
-        background: linear-gradient(
-          0deg,
-          #ffffff00 0%,
-          var(--color-bg-main) 50%
-        );
+        background: linear-gradient(0deg, #ffffff00 0%, #f8f8f8 50%);
       }
-
       .possibilities__right::after {
         bottom: -10px;
-        background: linear-gradient(
-          180deg,
-          #ffffff00 0%,
-          var(--color-bg-main) 50%
-        );
+        background: linear-gradient(180deg, #ffffff00 0%, #f8f8f8 50%);
       }
-
       .usecase-card {
         width: 282px;
-        height: 374px;
+        height: 461px;
         border-radius: 12px;
         overflow: hidden;
         position: relative;
-        color: var(--color-white);
-      }
-      .usecase-card__bottom h2 {
-        font-size: 14px;
-        font-weight: var(--fw-medium);
-        line-height: 1.5;
-        margin-bottom: 7px;
+        color: #fff;
       }
 
       .usecase-card img {
@@ -268,6 +234,7 @@
         object-fit: cover;
       }
 
+      /* dark gradient overlay */
       .usecase-card__overlay {
         position: absolute;
         inset: 0;
@@ -278,6 +245,7 @@
         );
       }
 
+      /* top content */
       .usecase-card__top {
         position: absolute;
         top: 25px;
@@ -289,7 +257,7 @@
         font-size: 10px;
         letter-spacing: 2px;
         line-height: 18px;
-        font-weight: var(--fw-regular);
+        font-weight: 400;
         text-transform: uppercase;
       }
 
@@ -302,6 +270,7 @@
         display: block !important;
       }
 
+      /* bottom content */
       .usecase-card__bottom {
         position: absolute;
         bottom: 25px;
@@ -318,12 +287,17 @@
       .usecase-card__bottom p {
         font-size: 14px;
         line-height: 20px;
-        font-weight: var(--fw-light);
+        font-weight: 200;
       }
 
       /* ================= NAVBAR ================= */
 
       nav {
+        /* position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:1000; */
         width: fit-content;
         margin: 0 auto;
       }
@@ -336,8 +310,13 @@
         background: #ffffff2e;
         border-radius: 60px;
         list-style: none;
-        border: 2px solid var(--color-white);
-        backdrop-filter: blur(22.2px);
+        border: 2px solid #fff;
+        border-image-source: linear-gradient(
+          266.71deg,
+          rgba(185, 185, 186, 0.65) -101.54%,
+          rgba(255, 255, 255, 0.65) 43.99%
+        );
+        backdrop-filter: blur(22.200000762939453px);
         box-shadow: 0px 1px 12px 0px #0000000d;
       }
 
@@ -346,6 +325,7 @@
         align-items: center;
       }
 
+      /* Logo */
       nav li:first-child {
         margin-right: 20px;
       }
@@ -355,19 +335,22 @@
         width: auto;
       }
 
+      /* Links */
       nav a {
         text-decoration: none;
         font-size: 15px;
-        font-weight: var(--fw-medium);
+        font-weight: 500;
         color: #333;
         transition: all 0.3s ease;
         position: relative;
       }
 
+      /* Hover effect */
       nav a:hover {
-        color: var(--color-black);
+        color: #000;
       }
 
+      /* Subtle underline animation */
       nav a::after {
         content: "";
         position: absolute;
@@ -375,15 +358,14 @@
         bottom: -4px;
         width: 0%;
         height: 2px;
-        background: var(--color-black);
+        background: #000;
         transition: 0.3s ease;
       }
 
       nav a:hover::after {
         width: 100%;
       }
-
-      /* ================= CTA ================= */
+      /* ================= CTA SECTION ================= */
 
       .cta-section {
         padding: 140px 20px;
@@ -397,25 +379,25 @@
 
       .cta-section h2 {
         font-size: 64px;
-        font-weight: var(--fw-regular);
-        color: var(--color-text-main);
-        line-height: 72px;
+        font-weight: 400;
+        color: #212121;
       }
 
       .cta-section h2 span {
         font-style: italic;
+        font-weight: 400;
       }
 
       .cta-links {
         margin-top: 30px;
         font-size: 20px;
-        font-weight: var(--fw-light);
+        font-weight: 200;
       }
 
       .cta-links a {
         color: #1a56db;
         text-decoration: none;
-        font-weight: var(--fw-regular);
+        font-weight: 400;
         transition: opacity 0.3s ease;
       }
 
@@ -427,39 +409,24 @@
         margin: 0 14px;
         color: #1a56db;
       }
-
       .hero,
       .possibilities {
         transform: translateZ(0);
       }
 
-      /* ================= RESPONSIVE ================= */
-
-      @media (max-width: 980px) {
+      @media (max-width: 768px) {
         .hero--content h1 {
-          font-size: 38px;
-          font-weight: var(--fw-regular);
-          line-height: 46px;
-        }
-        .hero::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: url("./images/assets/beckn-hero.png");
-          width: 100%;
-          height: 100%;
-          background-repeat: no-repeat;
-          background-size: conver;
-          background-position: center;
-        }
+          font-size: 27px;
 
+          font-weight: 400;
+        }
         .hero--content p {
           margin-top: 30px;
           font-size: 18px;
-          color: var(--color-primary-blue);
-          font-weight: var(--fw-light);
-        }
+          color: #0059c9;
 
+          font-weight: 200;
+        }
         .possibilities__inner {
           max-width: 1200px;
           margin: auto;
@@ -467,79 +434,9 @@
           gap: 40px;
           flex-direction: column;
         }
-
         .possibilities__left,
         .possibilities__right {
           width: 100%;
-          align-items: center;
-          justify-content: center;
-        }
-        .possibilities__left h2 {
-          font-size: 32px;
-          font-weight: var(--fw-regular);
-          line-height: 40px;
-          text-align: center;
-        }
-        .possibilities__left p {
-          margin: 0 auto;
-          text-align: center;
-          margin-top: 30px;
-        }
-        .possibilities__btn {
-          display: none;
-        }
-      }
-      @media (max-width: 767px) {
-        .hero--content h1 {
-          font-size: 24px;
-          font-weight: var(--fw-regular);
-          line-height: 32px;
-          max-width: 330px;
-          margin: 0 auto;
-        }
-
-        .hero--content p {
-          margin-top: 20px;
-          font-size: 18px;
-          color: var(--color-primary-blue);
-          font-weight: var(--fw-light);
-        }
-        .hero::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: url("./images/assets/beckn-hero--mobile.png");
-          width: 100%;
-          height: 100%;
-          background-repeat: no-repeat;
-          background-size: conver;
-          background-position: center;
-        }
-
-        .possibilities__inner {
-          max-width: 1200px;
-          margin: auto;
-          display: flex;
-          gap: 40px;
-          flex-direction: column;
-        }
-
-        .possibilities__left,
-        .possibilities__right {
-          width: 100%;
-        }
-        .cta-section h2 {
-          font-size: 32px;
-          font-weight: var(--fw-regular);
-          color: var(--color-text-main);
-          line-height: 40px;
-        }
-        .cta-links {
-          margin-top: 30px;
-          font-size: 18px;
-          font-weight: var(--fw-light);
-          display: flex;
-          flex-direction: column;
         }
       }
     </style>
@@ -608,13 +505,13 @@
             <div class="possibilities__right">
               <div class="marquee-wrapper col1">
                 <div class="marquee-track">
-                  <a href="https://nammayatri.in/" class="usecase-card">
+                  <div class="usecase-card">
                     <img src="./images/cards/17.png" alt="" />
 
                     <div class="usecase-card__overlay"></div>
 
                     <div class="usecase-card__top">
-                      <span class="usecase-card__category">MOBILITY</span>
+                      <span class="usecase-card__category">EDUCATION</span>
                       <img
                         src="./images/logos/Group 1124.png"
                         class="usecase-card__logo"
@@ -623,22 +520,20 @@
 
                     <div class="usecase-card__bottom">
                       <div class="usecase-card__divider"></div>
-                      <h2>Namma Yatri</h2>
                       <p>
-                        Open mobility network and peer-to-peer ride booking
-                        platform
+                        Open network for<br />
+                        learning and livelihood<br />
+                        transactions
                       </p>
                     </div>
-                  </a>
-                  <a href="http://ondc.org/" class="usecase-card">
+                  </div>
+                  <div class="usecase-card">
                     <img src="./images/cards/21.png" alt="" />
 
                     <div class="usecase-card__overlay"></div>
 
                     <div class="usecase-card__top">
-                      <span class="usecase-card__category"
-                        >DIGITAL COMMERCE</span
-                      >
+                      <span class="usecase-card__category">EDUCATION</span>
                       <img
                         src="./images/logos/Group.png"
                         class="usecase-card__logo"
@@ -647,14 +542,14 @@
 
                     <div class="usecase-card__bottom">
                       <div class="usecase-card__divider"></div>
-                      <h2>ONDC</h2>
                       <p>
-                        A country-wide open network for digital commerce in
-                        India
+                        Open network for<br />
+                        learning and livelihood<br />
+                        transactions
                       </p>
                     </div>
-                  </a>
-                  <a href="http://onest.network/" class="usecase-card">
+                  </div>
+                  <div class="usecase-card">
                     <img src="./images/cards/20.png" alt="" />
 
                     <div class="usecase-card__overlay"></div>
@@ -669,19 +564,20 @@
 
                     <div class="usecase-card__bottom">
                       <div class="usecase-card__divider"></div>
-                      <h2>ONEST</h2>
                       <p>
-                        Open network for learning and livelihood transactions
+                        Open network for<br />
+                        learning and livelihood<br />
+                        transactions
                       </p>
                     </div>
-                  </a>
-                  <a href="http://ueialliance.org/" class="usecase-card">
+                  </div>
+                  <div class="usecase-card">
                     <img src="./images/cards/15.png" alt="" />
 
                     <div class="usecase-card__overlay"></div>
 
                     <div class="usecase-card__top">
-                      <span class="usecase-card__category">ENERGY</span>
+                      <span class="usecase-card__category">EDUCATION</span>
                       <img
                         src="./images/logos/image 58.png"
                         class="usecase-card__logo"
@@ -690,19 +586,20 @@
 
                     <div class="usecase-card__bottom">
                       <div class="usecase-card__divider"></div>
-                      <h2>Unified Energy Interface</h2>
                       <p>
-                        Open network for all transactions in the energy sector
+                        Open network for<br />
+                        learning and livelihood<br />
+                        transactions
                       </p>
                     </div>
-                  </a>
-                  <a href="https://vistaar.da.gov.in/" class="usecase-card">
+                  </div>
+                  <div class="usecase-card">
                     <img src="./images/cards/19.png" alt="" />
 
                     <div class="usecase-card__overlay"></div>
 
                     <div class="usecase-card__top">
-                      <span class="usecase-card__category">AGRICULTURE</span>
+                      <span class="usecase-card__category">EDUCATION</span>
                       <img
                         src="./images/logos/image 73.png"
                         class="usecase-card__logo"
@@ -711,166 +608,20 @@
 
                     <div class="usecase-card__bottom">
                       <div class="usecase-card__divider"></div>
-                      <h2>Vistaar</h2>
                       <p>
-                        A government-orchestrated open network for farmer
-                        empowerment
+                        Open network for<br />
+                        learning and livelihood<br />
+                        transactions
                       </p>
                     </div>
-                  </a>
-                  <a
-                    href="https://govstack.gitbook.io/bb-emarketplace/development-13"
-                    class="usecase-card"
-                  >
-                    <img src="./images/cards/24.png" alt="" />
-
-                    <div class="usecase-card__overlay"></div>
-
-                    <div class="usecase-card__top">
-                      <span class="usecase-card__category"
-                        >DIGITAL COMMERCE</span
-                      >
-                      <img
-                        src="./images/logos/image 82.png"
-                        class="usecase-card__logo"
-                      />
-                    </div>
-
-                    <div class="usecase-card__bottom">
-                      <div class="usecase-card__divider"></div>
-                      <h2>GovStack</h2>
-                      <p>
-                        Building blocks for ITU e-marketplace transactions for
-                        governments
-                      </p>
-                    </div>
-                  </a>
-
-                  <a
-                    href="https://www.linkedin.com/company/vriddhinepal/"
-                    class="usecase-card"
-                  >
-                    <img src="./images/cards/14.png" alt="" />
-
-                    <div class="usecase-card__overlay"></div>
-
-                    <div class="usecase-card__top">
-                      <span class="usecase-card__category"
-                        >REGIONAL NETWORK</span
-                      >
-                      <img
-                        src="./images/logos/image 75.png"
-                        class="usecase-card__logo"
-                      />
-                    </div>
-
-                    <div class="usecase-card__bottom">
-                      <div class="usecase-card__divider"></div>
-                      <h2>Vriddhi Open Nepal Network</h2>
-                      <p>
-                        Nepal’s first open network powering tourism and
-                        agriculture
-                      </p>
-                    </div>
-                  </a>
-                  <a href="https://uhi.abdm.gov.in/" class="usecase-card">
-                    <img src="./images/cards/16.png" alt="" />
-
-                    <div class="usecase-card__overlay"></div>
-
-                    <div class="usecase-card__top">
-                      <span class="usecase-card__category">HEALTHCARE</span>
-                      <img
-                        src="./images/logos/image 76.png"
-                        class="usecase-card__logo"
-                      />
-                    </div>
-
-                    <div class="usecase-card__bottom">
-                      <div class="usecase-card__divider"></div>
-                      <h2>Unified Health Interface</h2>
-                      <p>
-                        Open network for health, enabling the Ayushman Bharat
-                        Digital Mission
-                      </p>
-                    </div>
-                  </a>
-                  <a href="http://openkochi.net/" class="usecase-card">
-                    <img src="./images/cards/22.png" alt="" />
-
-                    <div class="usecase-card__overlay"></div>
-
-                    <div class="usecase-card__top">
-                      <span class="usecase-card__category">MOBILITY</span>
-                      <img
-                        src="./images/logos/image 78.png"
-                        class="usecase-card__logo"
-                      />
-                    </div>
-
-                    <div class="usecase-card__bottom">
-                      <div class="usecase-card__divider"></div>
-                      <h2>OpenKochi</h2>
-                      <p>
-                        Open mobility network for multimodal transport in Kochi
-                      </p>
-                    </div>
-                  </a>
-                  <a href="http://oga.gm/" class="usecase-card">
-                    <img src="./images/cards/13.png" alt="" />
-
-                    <div class="usecase-card__overlay"></div>
-
-                    <div class="usecase-card__top">
-                      <span class="usecase-card__category"
-                        >DIGITAL COMMERCE</span
-                      >
-                      <img
-                        src="./images/logos/image 80.png"
-                        class="usecase-card__logo"
-                      />
-                    </div>
-
-                    <div class="usecase-card__bottom">
-                      <div class="usecase-card__divider"></div>
-                      <h2>Open Gambia Network</h2>
-                      <p>Country-wide network for digital commerce in Gambia</p>
-                    </div>
-                  </a>
-                  <a
-                    href="https://www.belemaberta.com.br/"
-                    class="usecase-card"
-                  >
-                    <img src="./images/cards/23.png" alt="" />
-
-                    <div class="usecase-card__overlay"></div>
-
-                    <div class="usecase-card__top">
-                      <span class="usecase-card__category"
-                        >REGIONAL NETWORK</span
-                      >
-                      <img
-                        src="./images/logos/image 81.png"
-                        class="usecase-card__logo"
-                      />
-                    </div>
-
-                    <div class="usecase-card__bottom">
-                      <div class="usecase-card__divider"></div>
-                      <h2>Belem Open Network</h2>
-                      <p>
-                        City-wide open network fostering access to digital
-                        services
-                      </p>
-                    </div>
-                  </a>
-                  <a href="https://openagrinet.global/" class="usecase-card">
+                  </div>
+                  <div class="usecase-card">
                     <img src="./images/cards/18.png" alt="" />
 
                     <div class="usecase-card__overlay"></div>
 
                     <div class="usecase-card__top">
-                      <span class="usecase-card__category">AGRICULTURE</span>
+                      <span class="usecase-card__category">EDUCATION</span>
                       <img
                         src="./images/logos/image 74.png"
                         class="usecase-card__logo"
@@ -879,12 +630,145 @@
 
                     <div class="usecase-card__bottom">
                       <div class="usecase-card__divider"></div>
-                      <h2>OpenAgriNet</h2>
                       <p>
-                        A global steering group guiding open agriculture efforts
+                        Open network for<br />
+                        learning and livelihood<br />
+                        transactions
                       </p>
                     </div>
-                  </a>
+                  </div>
+                  <div class="usecase-card">
+                    <img src="./images/cards/14.png" alt="" />
+
+                    <div class="usecase-card__overlay"></div>
+
+                    <div class="usecase-card__top">
+                      <span class="usecase-card__category">EDUCATION</span>
+                      <img
+                        src="./images/logos/image 75.png"
+                        class="usecase-card__logo"
+                      />
+                    </div>
+
+                    <div class="usecase-card__bottom">
+                      <div class="usecase-card__divider"></div>
+                      <p>
+                        Open network for<br />
+                        learning and livelihood<br />
+                        transactions
+                      </p>
+                    </div>
+                  </div>
+                  <div class="usecase-card">
+                    <img src="./images/cards/16.png" alt="" />
+
+                    <div class="usecase-card__overlay"></div>
+
+                    <div class="usecase-card__top">
+                      <span class="usecase-card__category">EDUCATION</span>
+                      <img
+                        src="./images/logos/image 76.png"
+                        class="usecase-card__logo"
+                      />
+                    </div>
+
+                    <div class="usecase-card__bottom">
+                      <div class="usecase-card__divider"></div>
+                      <p>
+                        Open network for<br />
+                        learning and livelihood<br />
+                        transactions
+                      </p>
+                    </div>
+                  </div>
+                  <div class="usecase-card">
+                    <img src="./images/cards/22.png" alt="" />
+
+                    <div class="usecase-card__overlay"></div>
+
+                    <div class="usecase-card__top">
+                      <span class="usecase-card__category">EDUCATION</span>
+                      <img
+                        src="./images/logos/image 78.png"
+                        class="usecase-card__logo"
+                      />
+                    </div>
+
+                    <div class="usecase-card__bottom">
+                      <div class="usecase-card__divider"></div>
+                      <p>
+                        Open network for<br />
+                        learning and livelihood<br />
+                        transactions
+                      </p>
+                    </div>
+                  </div>
+                  <div class="usecase-card">
+                    <img src="./images/cards/13.png" alt="" />
+
+                    <div class="usecase-card__overlay"></div>
+
+                    <div class="usecase-card__top">
+                      <span class="usecase-card__category">EDUCATION</span>
+                      <img
+                        src="./images/logos/image 80.png"
+                        class="usecase-card__logo"
+                      />
+                    </div>
+
+                    <div class="usecase-card__bottom">
+                      <div class="usecase-card__divider"></div>
+                      <p>
+                        Open network for<br />
+                        learning and livelihood<br />
+                        transactions
+                      </p>
+                    </div>
+                  </div>
+                  <div class="usecase-card">
+                    <img src="./images/cards/23.png" alt="" />
+
+                    <div class="usecase-card__overlay"></div>
+
+                    <div class="usecase-card__top">
+                      <span class="usecase-card__category">EDUCATION</span>
+                      <img
+                        src="./images/logos/image 81.png"
+                        class="usecase-card__logo"
+                      />
+                    </div>
+
+                    <div class="usecase-card__bottom">
+                      <div class="usecase-card__divider"></div>
+                      <p>
+                        Open network for<br />
+                        learning and livelihood<br />
+                        transactions
+                      </p>
+                    </div>
+                  </div>
+                  <div class="usecase-card">
+                    <img src="./images/cards/24.png" alt="" />
+
+                    <div class="usecase-card__overlay"></div>
+
+                    <div class="usecase-card__top">
+                      <span class="usecase-card__category">EDUCATION</span>
+                      <img
+                        src="./images/logos/image 82.png"
+                        class="usecase-card__logo"
+                      />
+                    </div>
+
+                    <div class="usecase-card__bottom">
+                      <div class="usecase-card__divider"></div>
+                      <p>
+                        Open network for<br />
+                        learning and livelihood<br />
+                        transactions
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -1183,10 +1067,7 @@
               justify-content: center;
               padding: 40px;
             "
-            ><img
-              style="width: 90%; max-width: 1200px"
-              src="./images/Union.png"
-              alt=""
+            ><img src="./images/Union.png" alt=""
           /></a>
         </footer>
       </div>
@@ -1218,7 +1099,7 @@
         const gap = 30;
         const singleSetHeight = (cardHeight + gap) * (cards.length / 2);
 
-        const visibleCards = 2.8;
+        const visibleCards = 2;
         wrapper.style.height = (cardHeight + gap) * visibleCards + "px";
 
         if (reverse) {
@@ -1275,7 +1156,8 @@
           lensActive = false;
         });
       } else {
-        /* ================= MOBILE AUTO FLOAT ================= */
+
+      /* ================= MOBILE AUTO FLOAT ================= */
         lensActive = true;
 
         // Random floating motion
