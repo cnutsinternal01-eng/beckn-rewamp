@@ -187,10 +187,10 @@
       }
 
       .possibilities__btn {
-        display: inline-block;
+        display: block;
+        width: max-content;
         margin-top: 30px;
         padding: 14px 28px;
-        border: 1px solid var(--color-border-light);
         border-radius: 40px;
         text-decoration: none;
         color: var(--color-text-main);
@@ -199,8 +199,42 @@
 
       .possibilities__btn:hover {
         background: var(--color-black);
-        color: var(--color-white);
       }
+      .d-block {
+        display: none;
+      }
+
+      .possibilities__btn {
+
+  /* Transparent border required */
+  border: 2px solid transparent;
+
+  /* Gradient Border */
+  background:
+    linear-gradient(var(--color-bg-main), var(--color-bg-main)) padding-box,
+    linear-gradient(200deg, #dcdcdc, #ffffff, #cfcfcf) border-box;
+
+  transition: 0.4s ease;
+}
+
+/* Hover Animation */
+.possibilities__btn:hover {
+  background:
+    linear-gradient(var(--color-bg-main), var(--color-bg-main)) padding-box,
+    linear-gradient(270deg, #dcdcdc, #ffffff, #cfcfcf) border-box;
+
+  background-size: 200% 200%;
+  animation: borderMove 2s linear infinite;
+}
+
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%, 0% 50%;
+  }
+  100% {
+    background-position: 0% 50%, 200% 50%;
+  }
+}
 
       .possibilities__right {
         width: 60%;
@@ -491,6 +525,11 @@
         }
         .possibilities__btn {
           display: none;
+        }
+        .d-block {
+          display: block !important;
+          width: max-content;
+          margin: 0 auto;
         }
         nav ul {
           gap: 20px;
@@ -1230,6 +1269,7 @@
                 </div>
               </div>
             </div>
+            <a href="live-networks.html" class="possibilities__btn d-block">View all projects</a>
           </div>
         </section>
 
