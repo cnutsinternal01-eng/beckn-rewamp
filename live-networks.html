@@ -94,8 +94,10 @@ nav a {
   font-weight: var(--fw-medium);
   position: relative;
 }
-
-nav a::after {
+nav a:hover {
+        color: var(--color-primary-blue);
+      }
+/* nav a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -108,7 +110,7 @@ nav a::after {
 
 nav a:hover::after {
   width: 100%;
-}
+} */
 
 /* ================= HEADER ================= */
 
@@ -383,7 +385,7 @@ nav {
                 ><img src="./images/beckn-logo.svg" alt=""
               /></a>
             </li>
-            <li><a href="#">Live networks</a></li>
+            <li><a href="#" style="color: #1a56db;">Live networks</a></li>
             <li>
               <a
                 href="https://discord.com/invite/pbayfsrMR9?utm_source=website&utm_medium=BOCCTAButton&utm_campaign=BecknProtocol"
