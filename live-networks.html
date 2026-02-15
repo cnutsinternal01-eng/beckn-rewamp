@@ -1,119 +1,120 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beckn – Live Networks</title>
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;1,400&family=Poppins:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;1,400&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet" />
 
     <style>
-:root {
-  /* COLORS */
-  --color-bg-main: #f8f8f8;
-  --color-text-dark: #333;
-  --color-text-muted: #555;
-  --color-heading: #212121;
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-primary-blue: #1a56db;
+        :root {
+            /* COLORS */
+            --color-bg-main: #f8f8f8;
+            --color-text-dark: #333;
+            --color-text-muted: #555;
+            --color-heading: #212121;
+            --color-white: #ffffff;
+            --color-black: #000000;
+            --color-primary-blue: #1a56db;
 
-  /* GLASS */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-blur: blur(20px);
+            /* GLASS */
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-blur: blur(20px);
 
-  /* SHADOWS */
-  --shadow-nav: 0 8px 25px rgba(0, 0, 0, 0.05);
-  --shadow-card-hover: 0 25px 50px rgba(0, 0, 0, 0.15);
+            /* SHADOWS */
+            --shadow-nav: 0 8px 25px rgba(0, 0, 0, 0.05);
+            --shadow-card-hover: 0 25px 50px rgba(0, 0, 0, 0.15);
 
-  /* FONTS */
-  --font-body: "Poppins", sans-serif;
-  --font-heading: "Noto Serif", serif;
+            /* FONTS */
+            --font-body: "Poppins", sans-serif;
+            --font-heading: "Noto Serif", serif;
 
-  /* FONT WEIGHTS */
-  --fw-light: 200;
-  --fw-regular: 400;
-  --fw-medium: 500;
+            /* FONT WEIGHTS */
+            --fw-light: 200;
+            --fw-regular: 400;
+            --fw-medium: 500;
 
-  /* SIZES */
-  --nav-gap: 40px;
-  --nav-padding-y: 18px;
-  --nav-padding-x: 40px;
-  --radius-pill: 60px;
-  --radius-card: 12px;
-}
+            /* SIZES */
+            --nav-gap: 40px;
+            --nav-padding-y: 18px;
+            --nav-padding-x: 40px;
+            --radius-pill: 60px;
+            --radius-card: 12px;
+        }
 
-/* ================= RESET ================= */
+        /* ================= RESET ================= */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-  font-family: var(--font-body);
-  background: var(--color-bg-main);
-  overflow-x: hidden;
-}
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg-main);
+            overflow-x: hidden;
+        }
 
-#smooth-content {
-  will-change: transform;
-}
+        #smooth-content {
+            will-change: transform;
+        }
 
-/* ================= NAV ================= */
+        /* ================= NAV ================= */
 
-/* ================= NAVBAR ================= */
+        /* ================= NAVBAR ================= */
 
-      nav {
-        width: max-content;
-        margin: 0 auto;
-      }
+        nav {
+            width: max-content;
+            margin: 0 auto;
+        }
 
-      nav ul {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-        padding: 20px 40px;
-        background: #ffffff2e;
-        border-radius: 60px;
-        list-style: none;
-        border: 2px solid var(--color-white);
-        backdrop-filter: blur(22.2px);
-        box-shadow: 0px 1px 12px 0px #0000000d;
-      }
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 20px 40px;
+            background: #ffffff2e;
+            border-radius: 60px;
+            list-style: none;
+            border: 2px solid var(--color-white);
+            backdrop-filter: blur(22.2px);
+            box-shadow: 0px 1px 12px 0px #0000000d;
+        }
 
-      nav li {
-        display: flex;
-        align-items: center;
-      }
+        nav li {
+            display: flex;
+            align-items: center;
+        }
 
-      nav li:first-child {
-        margin-right: 20px;
-      }
+        nav li:first-child {
+            margin-right: 20px;
+        }
 
-      nav img {
-        height: 26px;
-        width: auto;
-      }
+        nav img {
+            height: 26px;
+            width: auto;
+        }
 
-      nav a {
-        text-decoration: none;
-        font-size: 15px;
-        font-weight: var(--fw-medium);
-        color: #333;
-        transition: all 0.3s ease;
-        position: relative;
-      }
+        nav a {
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: var(--fw-medium);
+            color: #333;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+        }
 
-      nav a:hover {
-        color: var(--color-primary-blue);
-      }
+        nav a:hover {
+            color: var(--color-primary-blue);
+        }
 
-      /* nav a::after {
+        /* nav a::after {
         content: "";
         position: absolute;
         left: 0;
@@ -128,715 +129,692 @@ body {
         width: 100%;
       } */
 
-/* ================= HEADER ================= */
+        /* ================= HEADER ================= */
 
-.page-header {
-  text-align: left;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 120px 0px 0px 100px;
-}
-
-.page-header h1 {
-  font-family: var(--font-heading);
-  font-size: 48px;
-  font-weight: var(--fw-light);
-  line-height: 1.2;
-  margin-top: 120px;
-  width: 100% !important;
-  position: relative;
-}
-
-.page-header h1 span {
-  font-style: italic;
-}
-
-.page-header p {
-  margin-top: 20px;
-  max-width: 450px;
-  font-size: 18px;
-  color: var(--color-text-muted);
-}
-
-/* ================= GRID ================= */
-
-.live-grid .bn-container {
-  max-width: 1200px;
-  margin: 100px auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-}
-
-/* ================= CARD ================= */
-
-.usecase-card {
-  width: 282px;
-  height: 374px;
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  position: relative;
-  color: var(--color-white);
-  cursor: pointer;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.usecase-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-card-hover);
-}
-
-.usecase-card img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.usecase-card__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.25),
-    rgba(0, 0, 0, 0.2)
-  );
-}
-
-.usecase-card__top {
-  position: absolute;
-  top: 25px;
-  left: 25px;
-}
-
-.usecase-card__category {
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.usecase-card__logo {
-  margin-top: 10px;
-  width: auto !important;
-  height: auto !important;
-  max-width: 120px;
-  position: relative !important;
-  display: block;
-  object-fit: contain !important;
-}
-
-.usecase-card__bottom {
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
-  right: 25px;
-}
-
-.usecase-card__bottom h2 {
-  font-size: 14px;
-  font-weight: var(--fw-medium);
-  line-height: 1.5;
-  margin-bottom: 7px;
-}
-
-.usecase-card__divider {
-  height: 1px;
-  background: rgba(255, 255, 255, 0.7);
-  margin-bottom: 14px;
-}
-
-.usecase-card__bottom p {
-  font-size: 14px;
-  line-height: 1.5;
-  font-weight: var(--fw-light);
-}
-
-/* ================= CTA SECTION ================= */
-
-.cta-section {
-  padding: 140px 20px;
-  text-align: center;
-}
-
-.cta-inner {
-  max-width: 900px;
-  margin: auto;
-}
-
-.cta-section h2 {
-  font-size: 64px;
-  font-weight: var(--fw-regular);
-  font-family: var(--font-heading);
-  color: var(--color-heading);
-}
-
-.cta-section h2 span {
-  font-style: italic;
-  font-weight: var(--fw-regular);
-}
-
-.cta-links {
-  margin-top: 30px;
-  font-size: 20px;
-  font-weight: var(--fw-light);
-}
-
-.cta-links a {
-  color: var(--color-primary-blue);
-  text-decoration: none;
-  font-weight: var(--fw-regular);
-  transition: opacity 0.3s ease;
-}
-
-.cta-links a:hover {
-  opacity: 0.6;
-}
-
-.cta-links .dot {
-  margin: 0 14px;
-  color: var(--color-primary-blue);
-}
-.page-header h1::before{
-    content: " ";
-    position: absolute;
-    background: url('./images/Vector\ 139.svg');
-    top: 30px;
-    left: -90px;
-    width: 320px;
-    z-index: 99;
-    height: 2px;
-}
-/* ================= FIXED NAV ================= */
-
-nav {
-  position: fixed;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  opacity: 1;
-  z-index: 9999;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
- /* ================= FOOTER ================= */
-
-.site-footer {
-  position: relative;
-  background: var(--color-bg-main);
-  padding: 120px 40px 60px;
-  overflow: hidden;
-}
-
-/* BIG FADED LOGO */
-.footer-logo {
-  width: 100%;
-  margin-bottom: 50px;
-}
-
-.footer-logo img {
-  width: 100%;
-}
-
-/* BOTTOM CONTENT */
-.footer-bottom {
-  position: relative;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-/* LEFT SIDE */
-.footer-left p {
-  font-size: 14px;
-  color:var(--color-black);
-}
-
-.footer-links {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.footer-links a {
-  font-size: 14px;
-  color: var(--color-black);
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.footer-links a:hover {
-  color: var(--color-primary-blue);
-}
-
-/* RIGHT SIDE */
-.footer-right {
-  display: flex;
-  gap: 30px;
-}
-
-.footer-right a {
-  font-size: 14px;
-  color: var(--color-black);
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.footer-right a:hover {
-  color: var(--color-primary-blue);
-}
-/* ================= RESPONSIVE ================= */
-@media (max-width: 1200px) {
-  .live-grid .bn-container {
-    grid-template-columns: repeat(3, 1fr);
-    width: 90%;
-    margin: 0 auto;
-  }
-  .page-header{
-    padding: 120px 20px;
-  }
-}
-@media (max-width: 980px) {
-  .live-grid .bn-container {
-    grid-template-columns: repeat(3, 1fr);
-    width: 95%;
-    margin: 0 auto;
-  }
-
-  .usecase-card {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .page-header {
-    padding: 120px 20px;
-  }
-  nav ul {
-                  gap: 15px;
-        padding: 15px 15px;
+        .page-header {
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 0px 0px 100px;
         }
 
-nav img {
-    height: 24px;
-    width: auto;
-}
-        nav li:first-child {
-    margin-right: 10px;
-}
-        nav a {
-          text-decoration: none;
-          font-size: 13px;
-          font-weight: var(--fw-medium);
-          color: #333;
-          transition: all 0.3s ease;
-          position: relative;
+        .page-header h1 {
+            font-family: var(--font-heading);
+            font-size: 48px;
+            font-weight: var(--fw-light);
+            line-height: 1.2;
+            margin-top: 120px;
+            width: 100% !important;
+            position: relative;
         }
-}
 
-@media (max-width: 768px) {
+        .page-header h1 span {
+            font-style: italic;
+        }
 
-  .page-header h1 {
-    font-size: 32px;
-  }
+        .page-header p {
+            margin-top: 20px;
+            max-width: 450px;
+            font-size: 18px;
+            color: var(--color-text-muted);
+        }
 
-  .live-grid .bn-container {
-    grid-template-columns: repeat(2, 1fr);
-    width: 95%;
-    margin: 0 auto;
-  }
+        /* ================= GRID ================= */
 
-  .usecase-card {
-    width: 100%;
-    margin: 0 auto;
-  }
-  .page-header h1::before {
-    content: " ";
-    position: absolute;
-    top: 19px;
-    left: -90px;
-    width: 245px;
-    z-index: 99;
-    height: 2px;
-}
-.footer-bottom {
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-  }
+        .live-grid .bn-container {
+            max-width: 1200px;
+            margin: 100px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
 
-  .footer-right {
-    gap: 20px;
-  }
-  .site-footer {
-    position: relative;
-    background: var(--color-bg-main);
-    padding: 80px 20px 20px;
-    overflow: hidden;
-}
-.footer-right a, .footer-links a, .footer-left p {
-  font-size: 12px;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-}
-}
+        /* ================= CARD ================= */
 
-@media (max-width: 568px) {
-  .live-grid .bn-container {
-    grid-template-columns: 1fr;
-  }
+        .usecase-card {
+            width: 282px;
+            height: 374px;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            position: relative;
+            color: var(--color-white);
+            cursor: pointer;
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease;
+        }
 
-  .usecase-card {
-    width: 90%;
-    margin: 0 auto;
-  }
+        .usecase-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-card-hover);
+        }
 
-  .page-header {
-    padding: 120px 20px 50px 20px;
-  }
+        .usecase-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-  .cta-section h2 {
-    font-size: 32px;
-    line-height: 40px;
-  }
+        .usecase-card__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, 0.25),
+                    rgba(0, 0, 0, 0.2));
+        }
 
-  .cta-links {
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-  }
-}
+        .usecase-card__top {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+        }
 
+        .usecase-card__category {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .usecase-card__logo {
+            margin-top: 10px;
+            width: auto !important;
+            height: auto !important;
+            max-width: 120px;
+            position: relative !important;
+            display: block;
+            object-fit: contain !important;
+        }
+
+        .usecase-card__bottom {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+        }
+
+        .usecase-card__bottom h2 {
+            font-size: 14px;
+            font-weight: var(--fw-medium);
+            line-height: 1.5;
+            margin-bottom: 7px;
+        }
+
+        .usecase-card__divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 14px;
+        }
+
+        .usecase-card__bottom p {
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: var(--fw-light);
+        }
+
+        /* ================= CTA SECTION ================= */
+
+        .cta-section {
+            padding: 140px 20px;
+            text-align: center;
+        }
+
+        .cta-inner {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .cta-section h2 {
+            font-size: 64px;
+            font-weight: var(--fw-regular);
+            font-family: var(--font-heading);
+            color: var(--color-heading);
+        }
+
+        .cta-section h2 span {
+            font-style: italic;
+            font-weight: var(--fw-regular);
+        }
+
+        .cta-links {
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight: var(--fw-light);
+        }
+
+        .cta-links a {
+            color: var(--color-primary-blue);
+            text-decoration: none;
+            font-weight: var(--fw-regular);
+            transition: opacity 0.3s ease;
+        }
+
+        .cta-links a:hover {
+            opacity: 0.6;
+        }
+
+        .cta-links .dot {
+            margin: 0 14px;
+            color: var(--color-primary-blue);
+        }
+
+        .page-header h1::before {
+            content: " ";
+            position: absolute;
+            background: url("./images/Vector\ 139.svg");
+            top: 30px;
+            left: -90px;
+            width: 320px;
+            z-index: 99;
+            height: 2px;
+        }
+
+        /* ================= FIXED NAV ================= */
+
+        nav {
+            position: fixed;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 1;
+            z-index: 9999;
+            transition:
+                transform 0.5s ease,
+                opacity 0.5s ease;
+        }
+
+        /* ================= FOOTER ================= */
+
+        .site-footer {
+            position: relative;
+            background: var(--color-bg-main);
+            padding: 120px 40px 60px;
+            overflow: hidden;
+        }
+
+        /* BIG FADED LOGO */
+        .footer-logo {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo img {
+            width: 100%;
+        }
+
+        /* BOTTOM CONTENT */
+        .footer-bottom {
+            position: relative;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        /* LEFT SIDE */
+        .footer-left p {
+            font-size: 14px;
+            color: var(--color-black);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: var(--color-black);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary-blue);
+        }
+
+        /* RIGHT SIDE */
+        .footer-right {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-right a {
+            font-size: 14px;
+            color: var(--color-black);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-right a:hover {
+            color: var(--color-primary-blue);
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 1200px) {
+            .live-grid .bn-container {
+                grid-template-columns: repeat(3, 1fr);
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            .page-header {
+                padding: 120px 20px;
+            }
+        }
+
+        @media (max-width: 980px) {
+            .live-grid .bn-container {
+                grid-template-columns: repeat(3, 1fr);
+                width: 95%;
+                margin: 0 auto;
+            }
+
+            .usecase-card {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .page-header {
+                padding: 120px 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+                padding: 15px 15px;
+            }
+
+            nav img {
+                height: 24px;
+                width: auto;
+            }
+
+            nav li:first-child {
+                margin-right: 10px;
+            }
+
+            nav a {
+                text-decoration: none;
+                font-size: 13px;
+                font-weight: var(--fw-medium);
+                color: #333;
+                transition: all 0.3s ease;
+                position: relative;
+                display: flex;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .live-grid .bn-container {
+                grid-template-columns: repeat(2, 1fr);
+                width: 95%;
+                margin: 0 auto;
+            }
+
+            .usecase-card {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .page-header h1::before {
+                content: " ";
+                position: absolute;
+                top: 19px;
+                left: -90px;
+                width: 245px;
+                z-index: 99;
+                height: 2px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 30px;
+                align-items: center;
+            }
+
+            .footer-right {
+                gap: 20px;
+            }
+
+            .site-footer {
+                position: relative;
+                background: var(--color-bg-main);
+                padding: 80px 20px 20px;
+                overflow: hidden;
+            }
+
+            .footer-right a,
+            .footer-links a,
+            .footer-left p {
+                font-size: 12px;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 568px) {
+            .live-grid .bn-container {
+                grid-template-columns: 1fr;
+            }
+
+            .usecase-card {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            .page-header {
+                padding: 120px 20px 50px 30px;
+            }
+
+            .cta-section h2 {
+                font-size: 32px;
+                line-height: 40px;
+            }
+
+            .cta-links {
+                font-size: 18px;
+                display: flex;
+                flex-direction: column;
+            }
+        }
     </style>
-  </head>
+</head>
 
-  <body>
-           <!-- NAV -->
-        <nav>
-          <ul>
+<body>
+    <!-- NAV -->
+    <nav>
+        <ul>
             <li>
-              <a href="beckn-responsive.html"
-                ><img src="./images/beckn-logo.svg" alt=""
-              /></a>
+                <a href="beckn-responsive.html"><img src="./images/beckn-logo.svg" alt="" /></a>
             </li>
-            <li><a href="#" style="color: #1a56db;">Live networks</a></li>
+            <li><a href="#" style="color: #1a56db">Live networks</a></li>
             <li>
-              <a
-                href="https://discord.com/invite/pbayfsrMR9?utm_source=website&utm_medium=BOCCTAButton&utm_campaign=BecknProtocol"
-                >Discord</a
-              >
+                <a
+                    href="https://discord.com/invite/pbayfsrMR9?utm_source=website&utm_medium=BOCCTAButton&utm_campaign=BecknProtocol">Discord</a>
             </li>
             <li><a href="https://github.com/beckn">Github</a></li>
-          </ul>
-        </nav>
+        </ul>
+    </nav>
     <div id="smooth-wrapper">
-      <div id="smooth-content">
- 
+        <div id="smooth-content">
+            <!-- HEADER -->
+            <section class="page-header">
+                <div class="bn-container">
+                    <h1>
+                        <span>Unlocking <br />new possibilities</span><br />
+                        with beckn
+                    </h1>
+                    <p>
+                        build better digital economies, ecosystems and societies based on
+                        efficient, inclusive, transparent and sustainable open networks.
+                    </p>
+                </div>
+            </section>
 
-        <!-- HEADER -->
-        <section class="page-header">
-            <div class="bn-container">
-                          <h1>
-            <span>Unlocking <br />new possibilities</span><br />
-            with beckn
-          </h1>
-          <p>
-            build better digital economies, ecosystems and societies based on
-            efficient, inclusive, transparent and sustainable open networks.
-          </p>
-            </div>
-        </section>
+            <!-- GRID -->
+            <section class="live-grid">
+                <div class="bn-container">
+                    <a href="https://nammayatri.in/" class="usecase-card" target="_blank">
+                        <img src="./images/cards/17.png" alt="" />
 
-        <!-- GRID -->
-        <section class="live-grid">
-            <div class="bn-container">
-                          <a href="https://nammayatri.in/" class="usecase-card">
-            <img src="./images/cards/17.png" alt="" />
+                        <div class="usecase-card__overlay"></div>
 
-            <div class="usecase-card__overlay"></div>
+                        <div class="usecase-card__top">
+                            <span class="usecase-card__category">MOBILITY</span>
+                            <img src="./images/assets/logo/NY Logo 1.svg" class="usecase-card__logo" />
+                        </div>
 
-            <div class="usecase-card__top">
-              <span class="usecase-card__category">MOBILITY</span>
-              <img
-                src="./images/assets/logo/NY Logo 1.svg"
-                class="usecase-card__logo"
-              />
-            </div>
+                        <div class="usecase-card__bottom">
+                            <div class="usecase-card__divider"></div>
+                            <h2>Namma Yatri</h2>
+                            <p>
+                                Open mobility network and peer-to-peer ride booking platform
+                            </p>
+                        </div>
+                    </a>
+                    <a href="http://ondc.org/" class="usecase-card" target="_blank">
+                        <img src="./images/cards/Rectangle 8 (1).png" alt="" />
 
-            <div class="usecase-card__bottom">
-              <div class="usecase-card__divider"></div>
-              <h2>Namma Yatri</h2>
-              <p>
-               Open mobility network and peer-to-peer ride booking platform
-              </p>
-            </div>
-          </a>
-          <a href="http://ondc.org/" class="usecase-card">
-            <img src="./images/cards/21.png" alt="" />
+                        <div class="usecase-card__overlay"></div>
 
-            <div class="usecase-card__overlay"></div>
+                        <div class="usecase-card__top">
+                            <span class="usecase-card__category">DIGITAL COMMERCE</span>
+                            <img src="./images/assets/logo/Layer_1-1.svg" class="usecase-card__logo" />
+                        </div>
 
-            <div class="usecase-card__top">
-              <span class="usecase-card__category">DIGITAL COMMERCE</span>
-              <img src="./images/assets/logo/Layer_1-1.svg" class="usecase-card__logo" />
-            </div>
+                        <div class="usecase-card__bottom">
+                            <div class="usecase-card__divider"></div>
+                            <h2>ONDC</h2>
+                            <p>A country-wide open network for digital commerce in India</p>
+                        </div>
+                    </a>
+                    <a href="http://onest.network/" class="usecase-card" target="_blank">
+                        <img src="./images/cards/20.png" alt="" />
 
-            <div class="usecase-card__bottom">
-              <div class="usecase-card__divider"></div>
-              <h2>ONDC</h2>
-              <p>A country-wide open network for digital commerce in India</p>
-            </div>
-          </a>
-          <a href="http://onest.network/" class="usecase-card">
-            <img src="./images/cards/20.png" alt="" />
+                        <div class="usecase-card__overlay"></div>
 
-            <div class="usecase-card__overlay"></div>
+                        <div class="usecase-card__top">
+                            <span class="usecase-card__category">EDUCATION</span>
+                            <img src="./images/assets/logo/image 57.svg" class="usecase-card__logo" />
+                        </div>
 
-            <div class="usecase-card__top">
-              <span class="usecase-card__category">EDUCATION</span>
-              <img
-                src="./images/assets/logo/image 57.svg"
-                class="usecase-card__logo"
-              />
-            </div>
+                        <div class="usecase-card__bottom">
+                            <div class="usecase-card__divider"></div>
+                            <h2>ONEST</h2>
+                            <p>Open network for learning and livelihood transactions</p>
+                        </div>
+                    </a>
+                    <a href="http://ueialliance.org/" class="usecase-card" target="_blank">
+                        <img src="./images/cards/15.png" alt="" />
 
-            <div class="usecase-card__bottom">
-              <div class="usecase-card__divider"></div>
-              <h2>ONEST</h2>
-              <p>Open network for learning and livelihood transactions</p>
-            </div>
-          </a>
-          <a href="http://ueialliance.org/" class="usecase-card">
-            <img src="./images/cards/15.png" alt="" />
+                        <div class="usecase-card__overlay"></div>
 
-            <div class="usecase-card__overlay"></div>
+                        <div class="usecase-card__top">
+                            <span class="usecase-card__category">ENERGY</span>
+                            <img src="./images/assets/logo/image 83.svg" class="usecase-card__logo" />
+                        </div>
 
-            <div class="usecase-card__top">
-              <span class="usecase-card__category">ENERGY</span>
-              <img
-                src="./images/assets/logo/image 83.svg"
-                class="usecase-card__logo"
-              />
-            </div>
+                        <div class="usecase-card__bottom">
+                            <div class="usecase-card__divider"></div>
+                            <h2>Unified Energy Interface</h2>
+                            <p>Open network for all transactions in the energy sector</p>
+                        </div>
+                    </a>
+                    <a href="https://vistaar.da.gov.in/" class="usecase-card" target="_blank">
+                        <img src="./images/cards/19.png" alt="" />
 
-            <div class="usecase-card__bottom">
-              <div class="usecase-card__divider"></div>
-              <h2>Unified Energy Interface</h2>
-              <p>Open network for all transactions in the energy sector</p>
-            </div>
-          </a>
-          <a href="https://vistaar.da.gov.in/" class="usecase-card">
-            <img src="./images/cards/19.png" alt="" />
+                        <div class="usecase-card__overlay"></div>
 
-            <div class="usecase-card__overlay"></div>
+                        <div class="usecase-card__top">
+                            <span class="usecase-card__category">AGRICULTURE</span>
+                            <img src="./images/assets/logo/vistaar-logo 1.svg" class="usecase-card__logo" />
+                        </div>
 
-            <div class="usecase-card__top">
-              <span class="usecase-card__category">AGRICULTURE</span>
-              <img
-                src="./images/assets/logo/vistaar-logo 1.svg"
-                class="usecase-card__logo"
-              />
-            </div>
+                        <div class="usecase-card__bottom">
+                            <div class="usecase-card__divider"></div>
+                            <h2>Vistaar</h2>
+                            <p>
+                                A government-orchestrated open network for farmer empowerment
+                            </p>
+                        </div>
+                    </a>
+                    <a href="https://govstack.gitbook.io/bb-emarketplace/development-13" class="usecase-card"
+                        target="_blank">
+                        <img src="./images/cards/Rectangle 8 (3).png" alt="" />
 
-            <div class="usecase-card__bottom">
-              <div class="usecase-card__divider"></div>
-              <h2>Vistaar</h2>
-              <p>
-                A government-orchestrated open network for farmer empowerment
-              </p>
-            </div>
-          </a>
-                    <a
-            href="https://govstack.gitbook.io/bb-emarketplace/development-13"
-            class="usecase-card"
-          >
-            <img src="./images/cards/24.png" alt="" />
+                        <div class="usecase-card__overlay"></div>
 
-            <div class="usecase-card__overlay"></div>
+                        <div class="usecase-card__top">
+                            <span class="usecase-card__category">DIGITAL COMMERCE</span>
+                            <img src="./images/assets/logo/Clip path group.svg" class="usecase-card__logo" />
+                        </div>
 
-            <div class="usecase-card__top">
-              <span class="usecase-card__category">DIGITAL COMMERCE</span>
-              <img
-                src="./images/assets/logo/Clip path group.svg"
-                class="usecase-card__logo"
-              />
-            </div>
+                        <div class="usecase-card__bottom">
+                            <div class="usecase-card__divider"></div>
+                            <h2>GovStack</h2>
+                            <p>
+                                Building blocks for ITU e-marketplace transactions for
+                                governments
+                            </p>
+                        </div>
+                    </a>
 
-            <div class="usecase-card__bottom">
-              <div class="usecase-card__divider"></div>
-              <h2>GovStack</h2>
-              <p>
-                Building blocks for ITU e-marketplace transactions for
-                governments
-              </p>
-            </div>
-          </a>
+                    <a href="https://www.linkedin.com/company/vriddhinepal/" class="usecase-card" target="_blank">
+                        <img src="./images/cards/14.png" alt="" />
 
-          <a
-            href="https://www.linkedin.com/company/vriddhinepal/"
-            class="usecase-card"
-          >
-            <img src="./images/cards/14.png" alt="" />
+                        <div class="usecase-card__overlay"></div>
 
-            <div class="usecase-card__overlay"></div>
+                        <div class="usecase-card__top">
+                            <span class="usecase-card__category">REGIONAL NETWORK</span>
+                            <img src="./images/assets/logo/logo-no-background 2.svg" class="usecase-card__logo" />
+                        </div>
 
-            <div class="usecase-card__top">
-              <span class="usecase-card__category">REGIONAL NETWORK</span>
-              <img
-                src="./images/assets/logo/logo-no-background 2.svg"
-                class="usecase-card__logo"
-              />
-            </div>
+                        <div class="usecase-card__bottom">
+                            <div class="usecase-card__divider"></div>
+                            <h2>Vriddhi Open Nepal Network</h2>
+                            <p>
+                                Nepal’s first open network powering tourism and agriculture
+                            </p>
+                        </div>
+                    </a>
+                    <a href="https://uhi.abdm.gov.in/" class="usecase-card" target="_blank">
+                        <img src="./images/cards/16.png" alt="" />
 
-            <div class="usecase-card__bottom">
-              <div class="usecase-card__divider"></div>
-              <h2>Vriddhi Open Nepal Network</h2>
-              <p>Nepal’s first open network powering tourism and agriculture</p>
-            </div>
-          </a>
-          <a href="https://uhi.abdm.gov.in/" class="usecase-card">
-            <img src="./images/cards/16.png" alt="" />
+                        <div class="usecase-card__overlay"></div>
 
-            <div class="usecase-card__overlay"></div>
+                        <div class="usecase-card__top">
+                            <span class="usecase-card__category">HEALTHCARE</span>
+                            <img src="./images/assets/logo/image 57-2.svg" class="usecase-card__logo" />
+                        </div>
 
-            <div class="usecase-card__top">
-              <span class="usecase-card__category">HEALTHCARE</span>
-              <img
-                src="./images/assets/logo/image 57-2.svg"
-                class="usecase-card__logo"
-              />
-            </div>
+                        <div class="usecase-card__bottom">
+                            <div class="usecase-card__divider"></div>
+                            <h2>Unified Health Interface</h2>
+                            <p>
+                                Open network for health, enabling the Ayushman Bharat Digital
+                                Mission
+                            </p>
+                        </div>
+                    </a>
+                    <a href="http://openkochi.net/" class="usecase-card" target="_blank">
+                        <img src="./images/cards/22.png" alt="" />
 
-            <div class="usecase-card__bottom">
-              <div class="usecase-card__divider"></div>
-              <h2>Unified Health Interface</h2>
-              <p>
-                Open network for health, enabling the Ayushman Bharat Digital
-                Mission
-              </p>
-            </div>
-          </a>
-          <a href="http://openkochi.net/" class="usecase-card">
-            <img src="./images/cards/22.png" alt="" />
+                        <div class="usecase-card__overlay"></div>
 
-            <div class="usecase-card__overlay"></div>
+                        <div class="usecase-card__top">
+                            <span class="usecase-card__category">MOBILITY</span>
+                            <img src="./images/assets/logo/Group 10348.svg" class="usecase-card__logo" />
+                        </div>
 
-            <div class="usecase-card__top">
-              <span class="usecase-card__category">MOBILITY</span>
-              <img
-                src="./images/assets/logo/Group 10348.svg"
-                class="usecase-card__logo"
-              />
-            </div>
+                        <div class="usecase-card__bottom">
+                            <div class="usecase-card__divider"></div>
+                            <h2>OpenKochi</h2>
+                            <p>Open mobility network for multimodal transport in Kochi</p>
+                        </div>
+                    </a>
+                    <a href="http://oga.gm/" class="usecase-card" target="_blank">
+                        <img src="./images/cards/13.png" alt="" />
 
-            <div class="usecase-card__bottom">
-              <div class="usecase-card__divider"></div>
-              <h2>OpenKochi</h2>
-              <p>Open mobility network for multimodal transport in Kochi</p>
-            </div>
-          </a>
-          <a href="http://oga.gm/" class="usecase-card">
-            <img src="./images/cards/13.png" alt="" />
+                        <div class="usecase-card__overlay"></div>
 
-            <div class="usecase-card__overlay"></div>
+                        <div class="usecase-card__top">
+                            <span class="usecase-card__category">DIGITAL COMMERCE</span>
+                            <img src="./images/assets/logo/cg-0.svg" class="usecase-card__logo" />
+                        </div>
 
-            <div class="usecase-card__top">
-              <span class="usecase-card__category">DIGITAL COMMERCE</span>
-              <img
-                src="./images/assets/logo/cg-0.svg"
-                class="usecase-card__logo"
-              />
-            </div>
+                        <div class="usecase-card__bottom">
+                            <div class="usecase-card__divider"></div>
+                            <h2>Open Gambia Network</h2>
+                            <p>Country-wide network for digital commerce in Gambia</p>
+                        </div>
+                    </a>
+                    <a href="https://www.belemaberta.com.br/" class="usecase-card" target="_blank">
+                        <img src="https://beckn.io/wp-content/uploads/2026/02/Rectangle-8-2.webp" alt="" />
 
-            <div class="usecase-card__bottom">
-              <div class="usecase-card__divider"></div>
-              <h2>Open Gambia Network</h2>
-              <p>Country-wide network for digital commerce in Gambia</p>
-            </div>
-          </a>
-          <a href="https://www.belemaberta.com.br/" class="usecase-card">
-            <img src="./images/cards/23.png" alt="" />
+                        <div class="usecase-card__overlay"></div>
 
-            <div class="usecase-card__overlay"></div>
+                        <div class="usecase-card__top">
+                            <span class="usecase-card__category">REGIONAL NETWORK</span>
+                            <img src="./images/assets/logo/Group 10347.svg" class="usecase-card__logo" />
+                        </div>
 
-            <div class="usecase-card__top">
-              <span class="usecase-card__category">REGIONAL NETWORK</span>
-              <img
-                src="./images/assets/logo/Group 10347.svg"
-                class="usecase-card__logo"
-              />
-            </div>
+                        <div class="usecase-card__bottom">
+                            <div class="usecase-card__divider"></div>
+                            <h2>Belem Open Network</h2>
+                            <p>
+                                City-wide open network fostering access to digital services
+                            </p>
+                        </div>
+                    </a>
+                    <a href="https://openagrinet.global/" class="usecase-card" target="_blank">
+                        <img src="https://beckn.io/wp-content/uploads/2026/02/Rectangle-8.webp" alt="" />
 
-            <div class="usecase-card__bottom">
-              <div class="usecase-card__divider"></div>
-              <h2>Belem Open Network</h2>
-              <p>City-wide open network fostering access to digital services</p>
-            </div>
-          </a>
-                    <a href="https://openagrinet.global/" class="usecase-card">
-            <img src="https://beckn.io/wp-content/uploads/2026/02/Rectangle-8.webp" alt="" />
+                        <div class="usecase-card__overlay"></div>
 
-            <div class="usecase-card__overlay"></div>
+                        <div class="usecase-card__top">
+                            <span class="usecase-card__category">AGRICULTURE</span>
+                            <img src="./images/assets/logo/image 57-1.svg" class="usecase-card__logo" />
+                        </div>
 
-            <div class="usecase-card__top">
-              <span class="usecase-card__category">AGRICULTURE</span>
-              <img
-                src="./images/assets/logo/image 57-1.svg"
-                class="usecase-card__logo"
-              />
-            </div>
+                        <div class="usecase-card__bottom">
+                            <div class="usecase-card__divider"></div>
+                            <h2>OpenAgriNet</h2>
+                            <p>A global steering group guiding open agriculture efforts</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <section class="cta-section">
+                <div class="cta-inner">
+                    <h2>
+                        Internet’s leap <br />
+                        <span>for humanity</span>
+                    </h2>
 
-            <div class="usecase-card__bottom">
-              <div class="usecase-card__divider"></div>
-              <h2>OpenAgriNet</h2>
-              <p>A global steering group guiding open agriculture efforts</p>
-            </div>
-          </a>
-            </div>
-        </section>
-                <section class="cta-section">
-          <div class="cta-inner">
-            <h2>
-              Internet’s leap <br />
-              <span>for humanity</span>
-            </h2>
+                    <div class="cta-links">
+                        <a href="https://youtu.be/_JeGU1YLAco" target="_blank">What is beckn?</a>
+                        <span class="dot">•</span>
+                        <a href="#">What are open networks?</a>
+                        <span class="dot">•</span>
+                        <a href="https://energy.becknprotocol.io/" target="_blank">Digital Energy Grid</a>
+                    </div>
+                </div>
+            </section>
+            <footer class="site-footer">
+                <div class="footer-logo">
+                    <a href="#"><img src="https://beckn.io/wp-content/uploads/2026/02/beckn-io-logo.svg"
+                            alt="beckn" /></a>
+                </div>
 
-            <div class="cta-links">
-              <a href="https://youtu.be/_JeGU1YLAco" target="_blank">What is beckn?</a>
-              <span class="dot">•</span>
-              <a href="#">What are open networks?</a>
-               <span class="dot">•</span>
-              <a href="https://energy.becknprotocol.io/" target="_blank">Digital Energy Grid</a>
-            </div>
-          </div>
-        </section>
-        <footer class="site-footer">
+                <div class="footer-bottom">
+                    <div class="footer-left">
+                        <p>
+                            © 2026, Networks for Humanity Foundation. All rights reserved.
+                        </p>
+                        <p class="footer-links">
+                            <a href="https://beckn.io/privacy-policy/">Privacy policy</a>
+                            <span>•</span>
+                            <a href="https://beckn.io/sharing/">Code of sharing</a>
+                            <span>•</span>
+                            <a href="https://beckn.io/license/">License</a>
+                        </p>
+                    </div>
 
-  <div class="footer-logo">
-    <a href="#"><img src="https://beckn.io/wp-content/uploads/2026/02/beckn-io-logo.svg" alt="beckn"></a>
-  </div>
-
-  <div class="footer-bottom">
-    <div class="footer-left">
-      <p>© 2026, Networks for Humanity Foundation. All rights reserved.</p>
-      <p class="footer-links">
-        <a href="https://beckn.io/privacy-policy/">Privacy policy</a>
-        <span>•</span>
-        <a href="https://beckn.io/sharing/">Code of sharing</a>
-        <span>•</span>
-        <a href="https://beckn.io/license/">License</a>
-      </p>
-    </div>
-
-    <div class="footer-right">
-      <a href="https://www.linkedin.com/company/becknprotocol/" target="_blank">LinkedIn</a>
-      <a href="https://www.youtube.com/@becknprotocol" target="_blank">Youtube</a>
-      <a href="https://twitter.com/BecknProtocol" target="_blank">X</a>
-    </div>
-  </div>
-
-</footer>
-      </div>
+                    <div class="footer-right">
+                        <a href="https://www.linkedin.com/company/becknprotocol/" target="_blank">LinkedIn</a>
+                        <a href="https://www.youtube.com/@becknprotocol" target="_blank">Youtube</a>
+                        <a href="https://twitter.com/BecknProtocol" target="_blank">X</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </div>
 
     <!-- GSAP -->
@@ -845,18 +823,19 @@ nav img {
     <script src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
 
     <script>
-      gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+        gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-     let smoother;
+        let smoother;
 
-if (window.innerWidth > 980) {
-  smoother = ScrollSmoother.create({
-    wrapper: "#smooth-wrapper",
-    content: "#smooth-content",
-    smooth: 1.2,
-    effects: true
-  });
-}
+        if (window.innerWidth > 980) {
+            smoother = ScrollSmoother.create({
+                wrapper: "#smooth-wrapper",
+                content: "#smooth-content",
+                smooth: 1.2,
+                effects: true,
+            });
+        }
     </script>
-  </body>
+</body>
+
 </html>
