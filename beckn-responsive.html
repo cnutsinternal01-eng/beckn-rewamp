@@ -1500,17 +1500,18 @@ ScrollTrigger.matchMedia({
           currentX += (mouseX - currentX) * 0.08;
           currentY += (mouseY - currentY) * 0.08;
 
-          overlay.style.webkitMaskImage = `
-      radial-gradient(circle 180px at ${currentX}px ${currentY}px,
-      transparent 0px,
-      transparent 150px,
-      black 170px)`;
+         overlay.style.webkitMaskImage = `
+radial-gradient(circle ${lensRadius}px at ${currentX}px ${currentY}px,
+transparent 0px,
+transparent ${innerRadius}px,
+black ${lensRadius}px)`;
 
-          overlay.style.maskImage = `
-      radial-gradient(circle 180px at ${currentX}px ${currentY}px,
-      transparent 0px,
-      transparent 150px,
-      black 170px)`;
+overlay.style.maskImage = `
+radial-gradient(circle ${lensRadius}px at ${currentX}px ${currentY}px,
+transparent 0px,
+transparent ${innerRadius}px,
+black ${lensRadius}px)`;
+
         } else {
           overlay.style.webkitMaskImage = `radial-gradient(circle 0px at 50% 50%, black 100%)`;
 
@@ -1519,6 +1520,26 @@ ScrollTrigger.matchMedia({
 
         requestAnimationFrame(animate);
       }
+let lensRadius;
+let innerRadius;
+
+function updateLensSize() {
+  const base = Math.min(window.innerWidth, window.innerHeight);
+
+  if (window.innerWidth < 568) {
+    lensRadius = 100;
+    innerRadius = 80;
+  } else if (window.innerWidth < 980) {
+    lensRadius = 140;
+    innerRadius = 115;
+  } else {
+    lensRadius = 180;
+    innerRadius = 150;
+  }
+}
+
+updateLensSize();
+window.addEventListener("resize", updateLensSize);
 
       animate();
     </script>
