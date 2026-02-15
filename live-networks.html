@@ -144,6 +144,7 @@ body {
   line-height: 1.2;
   margin-top: 120px;
   width: 100% !important;
+  position: relative;
 }
 
 .page-header h1 span {
@@ -296,7 +297,27 @@ body {
   margin: 0 14px;
   color: var(--color-primary-blue);
 }
+.page-header h1::before{
+    content: " ";
+    position: absolute;
+    background: url('./images/Vector\ 139.svg');
+    top: 30px;
+    left: -90px;
+    width: 320px;
+    z-index: 99;
+    height: 2px;
+}
+/* ================= FIXED NAV ================= */
 
+nav {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 1;
+  z-index: 9999;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1200px) {
   .live-grid .bn-container {
@@ -361,6 +382,15 @@ nav img {
     width: 100%;
     margin: 0 auto;
   }
+  .page-header h1::before {
+    content: " ";
+    position: absolute;
+    top: 19px;
+    left: -90px;
+    width: 245px;
+    z-index: 99;
+    height: 2px;
+}
 }
 
 @media (max-width: 568px) {
@@ -387,18 +417,6 @@ nav img {
     display: flex;
     flex-direction: column;
   }
-}
-
-/* ================= FIXED NAV ================= */
-
-nav {
-  position: fixed;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  opacity: 1;
-  z-index: 9999;
-  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
     </style>
