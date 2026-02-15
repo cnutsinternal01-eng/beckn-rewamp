@@ -1454,6 +1454,14 @@ ScrollTrigger.matchMedia({
       let currentX = mouseX;
       let currentY = mouseY;
       let lensActive = false;
+      const focusPoints = [
+  { x: 0.10, y: 0.15 },
+  { x: 0.85, y: 0.13 },
+  { x: 0.70, y: 0.27 },
+  { x: 0.18, y: 0.70 },
+  { x: 0.85, y: 0.72 },
+   { x: 0.40, y: 0.86 }
+];
 
       /* ================= DESKTOP ================= */
       if (!isTouch) {
@@ -1481,18 +1489,36 @@ ScrollTrigger.matchMedia({
         });
       } else {
         /* ================= MOBILE AUTO FLOAT ================= */
-        lensActive = true;
+      //   lensActive = true;
 
-        // Random floating motion
-        function autoMove() {
-          mouseX = Math.random() * window.innerWidth;
-          mouseY = Math.random() * window.innerHeight;
-        }
+      //   // Random floating motion
+      //   function autoMove() {
+      //     mouseX = Math.random() * window.innerWidth;
+      //     mouseY = Math.random() * window.innerHeight;
+      //   }
 
-        autoMove();
-        setInterval(autoMove, 3000); // move every 3 seconds
-      }
+      //   autoMove();
+      //   setInterval(autoMove, 3000); // move every 3 seconds
+      // }
+lensActive = true;
 
+  let index = 0;
+
+  function moveToNextPoint() {
+    const heroRect = hero.getBoundingClientRect();
+    const point = focusPoints[index];
+
+    // Convert hero-relative coords to viewport coords
+    mouseX = heroRect.left + (heroRect.width * point.x);
+    mouseY = heroRect.top + (heroRect.height * point.y);
+
+    index = (index + 1) % focusPoints.length;
+
+    setTimeout(moveToNextPoint, 2500);
+  }
+
+  moveToNextPoint();
+}
       /* ================= ANIMATION LOOP ================= */
 
       function animate() {
