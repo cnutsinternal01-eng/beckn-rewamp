@@ -745,13 +745,16 @@ nav img {
     <script>
       gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-      ScrollSmoother.create({
-        wrapper: "#smooth-wrapper",
-        content: "#smooth-content",
-        smooth: 1.2,
-        effects: true,
-        smoothTouch: 0.1,
-      });
+     let smoother;
+
+if (window.innerWidth > 980) {
+  smoother = ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 1.2,
+    effects: true
+  });
+}
     </script>
   </body>
 </html>
