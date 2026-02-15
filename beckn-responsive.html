@@ -113,6 +113,13 @@
         background: var(--color-bg-main);
         pointer-events: none;
       }
+.overlay {
+  will-change: mask-image;
+  transform: translateZ(0);
+}
+.hero::before {
+  will-change: transform;
+}
 
       .hero--content {
         position: absolute;
@@ -668,7 +675,8 @@
           opacity: 0;
         }
         .d-none {
-          display: none;
+          display: none !important;
+        }
       }
     </style>
   </head>
@@ -1334,13 +1342,17 @@
       gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
       /* ================= SMOOTH SCROLL ================= */
-      ScrollSmoother.create({
-        wrapper: "#smooth-wrapper",
-        content: "#smooth-content",
-        smooth: 1.2,
-        effects: true,
-        smoothTouch: 0.1,
-      });
+      let smoother;
+
+if (window.innerWidth > 980) {
+  smoother = ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 1.2,
+    effects: true
+  });
+}
+
       /* ================= NAV APPEAR AFTER HERO ================= */
 
       // ScrollTrigger.create({
