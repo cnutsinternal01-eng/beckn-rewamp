@@ -205,36 +205,41 @@
       }
 
       .possibilities__btn {
+        /* Transparent border required */
+        border: 2px solid transparent;
 
-  /* Transparent border required */
-  border: 2px solid transparent;
+        /* Gradient Border */
+        background:
+          linear-gradient(var(--color-bg-main), var(--color-bg-main))
+            padding-box,
+          linear-gradient(200deg, #dcdcdc, #ffffff, #cfcfcf) border-box;
 
-  /* Gradient Border */
-  background:
-    linear-gradient(var(--color-bg-main), var(--color-bg-main)) padding-box,
-    linear-gradient(200deg, #dcdcdc, #ffffff, #cfcfcf) border-box;
+        transition: 0.4s ease;
+      }
 
-  transition: 0.4s ease;
-}
+      /* Hover Animation */
+      .possibilities__btn:hover {
+        background:
+          linear-gradient(var(--color-bg-main), var(--color-bg-main))
+            padding-box,
+          linear-gradient(270deg, #dcdcdc, #ffffff, #cfcfcf) border-box;
 
-/* Hover Animation */
-.possibilities__btn:hover {
-  background:
-    linear-gradient(var(--color-bg-main), var(--color-bg-main)) padding-box,
-    linear-gradient(270deg, #dcdcdc, #ffffff, #cfcfcf) border-box;
+        background-size: 200% 200%;
+        animation: borderMove 2s linear infinite;
+      }
 
-  background-size: 200% 200%;
-  animation: borderMove 2s linear infinite;
-}
-
-@keyframes borderMove {
-  0% {
-    background-position: 0% 50%, 0% 50%;
-  }
-  100% {
-    background-position: 0% 50%, 200% 50%;
-  }
-}
+      @keyframes borderMove {
+        0% {
+          background-position:
+            0% 50%,
+            0% 50%;
+        }
+        100% {
+          background-position:
+            0% 50%,
+            200% 50%;
+        }
+      }
 
       .possibilities__right {
         width: 60%;
@@ -296,7 +301,7 @@
         font-weight: var(--fw-medium);
         line-height: 1.5;
         margin-bottom: 7px;
-        font-family: var(--font-body)
+        font-family: var(--font-body);
       }
 
       .usecase-card img {
@@ -533,17 +538,17 @@
           margin: 0 auto;
         }
         nav ul {
-                  gap: 15px;
-        padding: 15px 15px;
+          gap: 15px;
+          padding: 15px 15px;
         }
 
-nav img {
-    height: 24px;
-    width: auto;
-}
+        nav img {
+          height: 24px;
+          width: auto;
+        }
         nav li:first-child {
-    margin-right: 10px;
-}
+          margin-right: 10px;
+        }
         nav a {
           text-decoration: none;
           font-size: 13px;
@@ -623,49 +628,48 @@ nav img {
         opacity: 1;
       }
       @media (max-width: 980px) {
+        .possibilities__right {
+          flex-direction: column;
+          align-items: center;
+        }
 
-  .possibilities__right {
-    flex-direction: column;
-    align-items: center;
-  }
+        .col2 {
+          display: none; /* hide second column on mobile */
+        }
 
-  .col2 {
-    display: none; /* hide second column on mobile */
-  }
+        .col1 {
+          width: 100%;
+        }
 
-  .col1 {
-    width: 100%;
-  }
+        .col1 .marquee-track {
+          flex-direction: row;
+          gap: 0;
+        }
 
-  .col1 .marquee-track {
-    flex-direction: row;
-    gap: 0;
-  }
+        .swiper {
+          width: 100%;
+        }
 
-  .swiper {
-    width: 100%;
-  }
+        .swiper-slide {
+          width: auto;
+          display: flex;
+          justify-content: center;
+        }
 
-  .swiper-slide {
-    width: auto;
-    display: flex;
-    justify-content: center;
-  }
-
- .possibilities__right::before,
-      .possibilities__right::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        z-index: 2;
-        pointer-events: none;
-        opacity: 0;
+        .possibilities__right::before,
+        .possibilities__right::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 100px;
+          z-index: 2;
+          pointer-events: none;
+          opacity: 0;
+        }
+        .d-none {
+          display: none;
       }
-
-}
-
     </style>
   </head>
 
@@ -718,15 +722,20 @@ nav img {
         <section class="possibilities">
           <div class="possibilities__inner">
             <div class="possibilities__left">
-              <h2>
+              <h2 class="d-none">
                 Leap into the<br /><i>networks of <br />the future</i>
+              </h2>
+              <h2 class="d-block">
+                Leap into the<br /><i>networks of the future</i>
               </h2>
               <p>
                 Just like forests, self-connected networks grow organically,
                 sustain themselves and maintain equilibrium. Take a look at some
                 of the live open networks that are built using this philosophy.
               </p>
-              <a href="live-networks.html" class="possibilities__btn">View all projects</a>
+              <a href="live-networks.html" class="possibilities__btn"
+                >View all projects</a
+              >
             </div>
 
             <div class="possibilities__right">
@@ -1005,7 +1014,7 @@ nav img {
 
               <div class="marquee-wrapper col2">
                 <div class="marquee-track">
-                                    <div class="usecase-card">
+                  <div class="usecase-card">
                     <img src="./images/cards/14.png" alt="" />
 
                     <div class="usecase-card__overlay"></div>
@@ -1161,7 +1170,6 @@ nav img {
                     </div>
                   </div>
 
-
                   <div class="usecase-card">
                     <img src="./images/cards/15.png" alt="" />
 
@@ -1230,7 +1238,7 @@ nav img {
                       </p>
                     </div>
                   </div>
-                                    <div class="usecase-card">
+                  <div class="usecase-card">
                     <img src="./images/cards/21.png" alt="" />
 
                     <div class="usecase-card__overlay"></div>
@@ -1278,7 +1286,9 @@ nav img {
                 </div>
               </div>
             </div>
-            <a href="live-networks.html" class="possibilities__btn d-block">View all projects</a>
+            <a href="live-networks.html" class="possibilities__btn d-block"
+              >View all projects</a
+            >
           </div>
         </section>
 
@@ -1383,63 +1393,56 @@ nav img {
 
       // createMarquee(document.querySelector(".col1"), 55, false);
       // createMarquee(document.querySelector(".col2"), 45, true);
-/* ================= RESPONSIVE MARQUEE / SWIPER ================= */
+      /* ================= RESPONSIVE MARQUEE / SWIPER ================= */
 
-let swiperInstance;
+      let swiperInstance;
 
-ScrollTrigger.matchMedia({
+      ScrollTrigger.matchMedia({
+        "(min-width: 981px)": function () {
+          // Kill swiper if exists
+          if (swiperInstance) {
+            swiperInstance.destroy(true, true);
+            swiperInstance = null;
+          }
 
-  "(min-width: 981px)": function () {
+          createMarquee(document.querySelector(".col1"), 55, false);
+          createMarquee(document.querySelector(".col2"), 45, true);
+        },
 
-    // Kill swiper if exists
-    if (swiperInstance) {
-      swiperInstance.destroy(true, true);
-      swiperInstance = null;
-    }
+        "(max-width: 980px)": function () {
+          // Kill GSAP animations
+          gsap.killTweensOf(".marquee-track");
 
-    createMarquee(document.querySelector(".col1"), 55, false);
-    createMarquee(document.querySelector(".col2"), 45, true);
-  },
+          swiperInstance = new Swiper(".col1", {
+            slidesPerView: 1.3,
+            spaceBetween: 20,
+            centeredSlides: true,
+            loop: true,
+            speed: 800,
 
-  "(max-width: 980px)": function () {
+            autoplay: {
+              delay: 2000,
+              disableOnInteraction: false,
+            },
 
-    // Kill GSAP animations
-    gsap.killTweensOf(".marquee-track");
+            // ✅ Breakpoints MUST be here
+            breakpoints: {
+              0: {
+                slidesPerView: 1.2,
+              },
 
-    swiperInstance = new Swiper(".col1", {
-      slidesPerView: 1.3,
-  spaceBetween: 20,
-  centeredSlides: true,
-  loop: true,
-  speed: 800,
+              568: {
+                slidesPerView: 2.3,
+              },
 
-  autoplay: {
-    delay: 2000,
-    disableOnInteraction: false,
-  },
-
-  // ✅ Breakpoints MUST be here
-  breakpoints: {
-
-    0: {
-      slidesPerView: 1.2
-    },
-
-    568: {
-      slidesPerView: 2.3
-    },
-
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 40
-    }
-
-  },
-    });
-
-  }
-
-});
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+            },
+          });
+        },
+      });
 
       /* ================= LENS (DESKTOP + MOBILE) ================= */
 
@@ -1455,13 +1458,13 @@ ScrollTrigger.matchMedia({
       let currentY = mouseY;
       let lensActive = false;
       const focusPoints = [
-  { x: 0.10, y: 0.15 },
-  { x: 0.85, y: 0.13 },
-  { x: 0.70, y: 0.27 },
-  { x: 0.18, y: 0.70 },
-  { x: 0.85, y: 0.72 },
-   { x: 0.40, y: 0.86 }
-];
+        { x: 0.1, y: 0.15 },
+        { x: 0.85, y: 0.13 },
+        { x: 0.7, y: 0.27 },
+        { x: 0.18, y: 0.7 },
+        { x: 0.85, y: 0.72 },
+        { x: 0.4, y: 0.86 },
+      ];
 
       /* ================= DESKTOP ================= */
       if (!isTouch) {
@@ -1489,36 +1492,36 @@ ScrollTrigger.matchMedia({
         });
       } else {
         /* ================= MOBILE AUTO FLOAT ================= */
-      //   lensActive = true;
+        //   lensActive = true;
 
-      //   // Random floating motion
-      //   function autoMove() {
-      //     mouseX = Math.random() * window.innerWidth;
-      //     mouseY = Math.random() * window.innerHeight;
-      //   }
+        //   // Random floating motion
+        //   function autoMove() {
+        //     mouseX = Math.random() * window.innerWidth;
+        //     mouseY = Math.random() * window.innerHeight;
+        //   }
 
-      //   autoMove();
-      //   setInterval(autoMove, 3000); // move every 3 seconds
-      // }
-lensActive = true;
+        //   autoMove();
+        //   setInterval(autoMove, 3000); // move every 3 seconds
+        // }
+        lensActive = true;
 
-  let index = 0;
+        let index = 0;
 
-  function moveToNextPoint() {
-    const heroRect = hero.getBoundingClientRect();
-    const point = focusPoints[index];
+        function moveToNextPoint() {
+          const heroRect = hero.getBoundingClientRect();
+          const point = focusPoints[index];
 
-    // Convert hero-relative coords to viewport coords
-    mouseX = heroRect.left + (heroRect.width * point.x);
-    mouseY = heroRect.top + (heroRect.height * point.y);
+          // Convert hero-relative coords to viewport coords
+          mouseX = heroRect.left + heroRect.width * point.x;
+          mouseY = heroRect.top + heroRect.height * point.y;
 
-    index = (index + 1) % focusPoints.length;
+          index = (index + 1) % focusPoints.length;
 
-    setTimeout(moveToNextPoint, 2500);
-  }
+          setTimeout(moveToNextPoint, 2500);
+        }
 
-  moveToNextPoint();
-}
+        moveToNextPoint();
+      }
       /* ================= ANIMATION LOOP ================= */
 
       function animate() {
@@ -1526,18 +1529,17 @@ lensActive = true;
           currentX += (mouseX - currentX) * 0.08;
           currentY += (mouseY - currentY) * 0.08;
 
-         overlay.style.webkitMaskImage = `
+          overlay.style.webkitMaskImage = `
 radial-gradient(circle ${lensRadius}px at ${currentX}px ${currentY}px,
 transparent 0px,
 transparent ${innerRadius}px,
 black ${lensRadius}px)`;
 
-overlay.style.maskImage = `
+          overlay.style.maskImage = `
 radial-gradient(circle ${lensRadius}px at ${currentX}px ${currentY}px,
 transparent 0px,
 transparent ${innerRadius}px,
 black ${lensRadius}px)`;
-
         } else {
           overlay.style.webkitMaskImage = `radial-gradient(circle 0px at 50% 50%, black 100%)`;
 
@@ -1546,26 +1548,26 @@ black ${lensRadius}px)`;
 
         requestAnimationFrame(animate);
       }
-let lensRadius;
-let innerRadius;
+      let lensRadius;
+      let innerRadius;
 
-function updateLensSize() {
-  const base = Math.min(window.innerWidth, window.innerHeight);
+      function updateLensSize() {
+        const base = Math.min(window.innerWidth, window.innerHeight);
 
-  if (window.innerWidth < 568) {
-    lensRadius = 100;
-    innerRadius = 80;
-  } else if (window.innerWidth < 980) {
-    lensRadius = 140;
-    innerRadius = 115;
-  } else {
-    lensRadius = 180;
-    innerRadius = 150;
-  }
-}
+        if (window.innerWidth < 568) {
+          lensRadius = 100;
+          innerRadius = 80;
+        } else if (window.innerWidth < 980) {
+          lensRadius = 140;
+          innerRadius = 115;
+        } else {
+          lensRadius = 180;
+          innerRadius = 150;
+        }
+      }
 
-updateLensSize();
-window.addEventListener("resize", updateLensSize);
+      updateLensSize();
+      window.addEventListener("resize", updateLensSize);
 
       animate();
     </script>
