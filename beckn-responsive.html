@@ -497,6 +497,10 @@ Template Name: Beckn Home Page Template
     .possibilities {
       transform: translateZ(0);
     }
+    
+    .d-block--flex{
+      display: none !important;
+    }
 
     /* ================= RESPONSIVE ================= */
 
@@ -608,7 +612,7 @@ Template Name: Beckn Home Page Template
         content: "";
         position: absolute;
         inset: 0;
-        background: url("https://beckn.io/wp-content/uploads/2026/02/Group-10349.png");
+        background: url("https://beckn.io/wp-content/uploads/2026/02/Network-Circles-1-1.png");
         width: 100%;
         height: 100%;
         background-repeat: no-repeat;
@@ -648,9 +652,9 @@ Template Name: Beckn Home Page Template
         position: relative;
         height: 750px;
         width: 100%;
-        background: url("https://beckn.io/wp-content/uploads/2026/02/beckn-hero-bg.webp") center/cover no-repeat;
         overflow: hidden;
         margin-bottom: -1px;
+        background: url("https://beckn.io/wp-content/uploads/2026/02/beckn-hero-bg.webp") center/cover no-repeat;
       }
 		.possibilities{
 			padding:0px 20px 50px 20px;
@@ -658,6 +662,12 @@ Template Name: Beckn Home Page Template
 		.possibilities__left{
 			padding:0px;
 		}
+    .footer-left p{
+      margin-bottom: 20px;
+    }
+    .footer-links.d-block--flex{
+      margin-bottom: 0px;
+    }
     }
 
     nav {
@@ -721,6 +731,9 @@ Template Name: Beckn Home Page Template
 
       .d-none {
         display: none !important;
+      }
+      .d-block--flex{
+        display: flex !important;
       }
     }
 
@@ -828,6 +841,9 @@ Template Name: Beckn Home Page Template
         justify-content: center;
 		flex-wrap:wrap;  
       }
+		.copy-rights{
+				max-width:270px;
+			}
     }
   </style>
 </head>
@@ -1374,14 +1390,24 @@ Template Name: Beckn Home Page Template
 
         <div class="footer-bottom">
           <div class="footer-left">
-            <p>
+            <p class="copy-rights">
               © 2026, Networks for Humanity Foundation. All rights reserved.
             </p>
-            <p class="footer-links">
+            <p class="footer-links d-none">
               <a href="https://beckn.io/privacy-policy/">Privacy policy</a>
               <span>•</span>
               <a href="https://beckn.io/sharing/">Code of sharing</a>
               <span>•</span>
+              <a href="https://beckn.io/license/">License</a>
+			  <span>•</span>
+              <a href="https://networksforhumanity.org/" target="_blank">Networks for Humanity</a>
+            </p>
+            <p class="footer-links d-block--flex">
+              <a href="https://beckn.io/privacy-policy/">Privacy policy</a>
+              <span>•</span>
+              <a href="https://beckn.io/sharing/">Code of sharing</a>
+            </p>
+            <p class="footer-links d-block--flex">
               <a href="https://beckn.io/license/">License</a>
 			  <span>•</span>
               <a href="https://networksforhumanity.org/" target="_blank">Networks for Humanity</a>
@@ -1536,12 +1562,12 @@ Template Name: Beckn Home Page Template
     let currentY = mouseY;
     let lensActive = false;
     const focusPoints = [
-      { x: 0.1, y: 0.15 },
-      { x: 0.85, y: 0.69 },
-      { x: 0.18, y: 0.67 },
+      { x: 0.2, y: 0.15 },
+      { x: 0.8, y: 0.75 },
+//       { x: 0.18, y: 0.67 },
       { x: 0.7, y: 0.27 },
-      { x: 0.4, y: 0.83 },
-      { x: 0.85, y: 0.13 },
+      { x: 0.30, y: 0.8 },
+      { x: 0.9, y: 0.1 },
     ];
 
     /* ================= DESKTOP ================= */

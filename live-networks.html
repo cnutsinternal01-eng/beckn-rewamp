@@ -1,4 +1,8 @@
-
+<!-- <?php
+/*
+Template Name: Live Networks Page Template
+*/
+?> -->
 
 <!doctype html>
 <html lang="en">
@@ -316,7 +320,7 @@
             color: var(--color-primary-blue);
         }
 
-        .page-header h1::before {
+/*         .page-header h1::before {
             content: " ";
             position: absolute;
             background: url("https://beckn.io/wp-content/uploads/2026/02/Vector-139.svg");
@@ -325,7 +329,7 @@
             width: 320px;
             z-index: 99;
             height: 2px;
-        }
+        } */
 
         /* ================= FIXED NAV ================= */
 
@@ -410,6 +414,9 @@
         .footer-right a:hover {
             color: var(--color-primary-blue);
         }
+		.d-block--flex{
+      display: none !important;
+    }
 
         /* ================= RESPONSIVE ================= */
         @media (max-width: 1200px) {
@@ -463,6 +470,12 @@
                 position: relative;
                 display: flex;
             }
+			.d-none {
+        display: none !important;
+      }
+      .d-block--flex{
+        display: flex !important;
+      }
         }
 
         @media (max-width: 768px) {
@@ -481,7 +494,7 @@
                 margin: 0 auto;
             }
 
-            .page-header h1::before {
+/*             .page-header h1::before {
                 content: " ";
                 position: absolute;
                 top: 19px;
@@ -489,7 +502,7 @@
                 width: 245px;
                 z-index: 99;
                 height: 2px;
-            }
+            } */
 
             .footer-bottom {
                 flex-direction: column;
@@ -515,7 +528,14 @@
                 text-align: center;
                 align-items: center;
                 justify-content: center;
+				flex-wrap:wrap;
             }
+			.footer-left p{
+      margin-bottom: 20px;
+    }
+    .footer-links.d-block--flex{
+      margin-bottom: 0px;
+    }
         }
 
         @media (max-width: 568px) {
@@ -542,6 +562,9 @@
                 display: flex;
                 flex-direction: column;
             }
+			.copy-rights{
+				max-width:270px;
+			}
         }
     </style>
 </head>
@@ -811,29 +834,38 @@
                     <a href="https://beckn.io/"><img src="https://beckn.io/wp-content/uploads/2026/02/beckn-io-logo.svg"
                             alt="beckn" /></a>
                 </div>
+        <div class="footer-bottom">
+          <div class="footer-left">
+            <p class="copy-rights">
+              © 2026, Networks for Humanity Foundation. All rights reserved.
+            </p>
+            <p class="footer-links d-none">
+              <a href="https://beckn.io/privacy-policy/">Privacy policy</a>
+              <span>•</span>
+              <a href="https://beckn.io/sharing/">Code of sharing</a>
+              <span>•</span>
+              <a href="https://beckn.io/license/">License</a>
+			  <span>•</span>
+              <a href="https://networksforhumanity.org/" target="_blank">Networks for Humanity</a>
+            </p>
+            <p class="footer-links d-block--flex">
+              <a href="https://beckn.io/privacy-policy/">Privacy policy</a>
+              <span>•</span>
+              <a href="https://beckn.io/sharing/">Code of sharing</a>
+            </p>
+            <p class="footer-links d-block--flex">
+              <a href="https://beckn.io/license/">License</a>
+			  <span>•</span>
+              <a href="https://networksforhumanity.org/" target="_blank">Networks for Humanity</a>
+            </p>
+          </div>
 
-                <div class="footer-bottom">
-                    <div class="footer-left">
-                        <p>
-                            © 2026, Networks for Humanity Foundation. All rights reserved.
-                        </p>
-                        <p class="footer-links">
-                            <a href="https://beckn.io/privacy-policy/">Privacy policy</a>
-                            <span>•</span>
-                            <a href="https://beckn.io/sharing/">Code of sharing</a>
-                            <span>•</span>
-                            <a href="https://beckn.io/license/">License</a>
-							<span>•</span>
-                            <a href="https://networksforhumanity.org/" target="_blank">Networks for Humanity</a>
-                        </p>
-                    </div>
-
-                    <div class="footer-right">
-                        <a href="https://www.linkedin.com/company/becknprotocol/" target="_blank">LinkedIn</a>
-                        <a href="https://www.youtube.com/@becknprotocol" target="_blank">Youtube</a>
-                        <a href="https://twitter.com/BecknProtocol" target="_blank">X</a>
-                    </div>
-                </div>
+          <div class="footer-right">
+            <a href="https://www.linkedin.com/company/becknprotocol/" target="_blank">LinkedIn</a>
+            <a href="https://www.youtube.com/@becknprotocol" target="_blank">Youtube</a>
+            <a href="https://twitter.com/BecknProtocol" target="_blank">X</a>
+          </div>
+        </div>
             </footer>
         </div>
     </div>
